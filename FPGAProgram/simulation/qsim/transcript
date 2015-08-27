@@ -1,0 +1,52 @@
+# do CODECSystem.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module CODECSystem
+# 
+# Top level modules:
+# 	CODECSystem
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module CODECSystem_vlg_sample_tst
+# -- Compiling module CODECSystem_vlg_check_tst
+# -- Compiling module CODECSystem_vlg_vec_tst
+# 
+# Top level modules:
+# 	CODECSystem_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.CODECSystem_vlg_vec_tst 
+# Loading work.CODECSystem_vlg_vec_tst
+# Loading work.CODECSystem
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading work.CODECSystem_vlg_sample_tst
+# Loading work.CODECSystem_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port int[0] :: @time = 1000000.000 ps
+#      Expected value = 00000
+#      Real value = xxxxx
+# ERROR! Vector Mismatch for output port int[1] :: @time = 1000000.000 ps
+#      Expected value = 00000
+#      Real value = xxxxx
+# ERROR! Vector Mismatch for output port int[2] :: @time = 1000000.000 ps
+#      Expected value = 00000
+#      Real value = xxxxx
+# ERROR! Vector Mismatch for output port int[3] :: @time = 1000000.000 ps
+#      Expected value = 00000
+#      Real value = xxxxx
+# ERROR! Vector Mismatch for output port int[4] :: @time = 1000000.000 ps
+#      Expected value = 00000
+#      Real value = xxxxx
+# ERROR! Vector Mismatch for output port c32 :: @time = 1300000.000 ps
+#      Expected value = 0
+#      Real value = 1
+# ERROR! Vector Mismatch for output port c64 :: @time = 1300000.000 ps
+#      Expected value = 0
+#      Real value = 1
+#           7 mismatched vectors : Simulation failed !
+# ** Note: $finish    : CODECSimulation.vwf.vt(283)
+#    Time: 10 us  Iteration: 0  Instance: /CODECSystem_vlg_vec_tst/tb_out
