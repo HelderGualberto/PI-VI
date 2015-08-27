@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Helder/Documents/PI-VI/FPGAProgram/CODECSystem.vhd
+source_file = 1, C:/Users/Helder/Documents/PI-VI/FPGAProgram/DASystem.vhd
+source_file = 1, C:/Users/Helder/Documents/PI-VI/FPGAProgram/FFD.bdf
+source_file = 1, C:/Users/Helder/Documents/PI-VI/FPGAProgram/db/CODECSystem.cbx.xml
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = FFD
+instance = comp, \Q~output\, Q~output, FFD, 1
+instance = comp, \CLK~input\, CLK~input, FFD, 1
+instance = comp, \D~input\, D~input, FFD, 1
+instance = comp, \inst~feeder\, inst~feeder, FFD, 1
+instance = comp, \CLR~input\, CLR~input, FFD, 1

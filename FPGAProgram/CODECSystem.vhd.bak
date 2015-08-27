@@ -1,0 +1,10 @@
+-- CODECSystem 
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+Entity CODECSystem IS
+	port(
+		);
+	
+END CODECSystem;
