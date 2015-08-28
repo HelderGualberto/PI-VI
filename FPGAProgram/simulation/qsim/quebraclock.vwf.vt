@@ -19,26 +19,26 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/26/2015 18:11:20"
+// Generated on "08/28/2015 19:41:20"
                                                                         
-// Verilog Self-Checking Test Bench (with test vectors) for design :    FFTDivider32
+// Verilog Self-Checking Test Bench (with test vectors) for design :    CODECSystem
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module FFTDivider32_vlg_sample_tst(
-	CLK,
-	T,
+module CODECSystem_vlg_sample_tst(
+	CPUCLK,
+	DAdata,
 	sampler_tx
 );
-input  CLK;
-input  T;
+input  CPUCLK;
+input [23:0] DAdata;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(CLK or T)
+always @(CPUCLK or DAdata)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -57,27 +57,39 @@ end
 assign sampler_tx = sample;
 endmodule
 
-module FFTDivider32_vlg_check_tst (
-	CLKout,
+module CODECSystem_vlg_check_tst (
+	c32,
+	c64,
+	int,
 	sampler_rx
 );
-input  CLKout;
+input  c32;
+input  c64;
+input [4:0] int;
 input sampler_rx;
 
-reg  CLKout_expected;
+reg  c32_expected;
+reg  c64_expected;
+reg [4:0] int_expected;
 
-reg  CLKout_prev;
+reg  c32_prev;
+reg  c64_prev;
+reg [4:0] int_prev;
 
-reg  CLKout_expected_prev;
+reg  c32_expected_prev;
+reg  c64_expected_prev;
+reg [4:0] int_expected_prev;
 
-reg  last_CLKout_exp;
+reg  last_c32_exp;
+reg  last_c64_exp;
+reg [4:0] last_int_exp;
 
 reg trigger;
 
 integer i;
 integer nummismatches;
 
-reg [1:1] on_first_change ;
+reg [1:3] on_first_change ;
 
 
 initial
@@ -85,32 +97,74 @@ begin
 trigger = 0;
 i = 0;
 nummismatches = 0;
-on_first_change = 1'b1;
+on_first_change = 3'b1;
 end
 
 // update real /o prevs
 
 always @(trigger)
 begin
-	CLKout_prev = CLKout;
+	c32_prev = c32;
+	c64_prev = c64;
+	int_prev = int;
 end
 
 // update expected /o prevs
 
 always @(trigger)
 begin
-	CLKout_expected_prev = CLKout_expected;
+	c32_expected_prev = c32_expected;
+	c64_expected_prev = c64_expected;
+	int_expected_prev = int_expected;
 end
 
 
 
-// expected CLKout
+// expected c32
 initial
 begin
-	CLKout_expected = 1'bX;
+	c32_expected = 1'bX;
+	c32_expected = #999000 1'b0;
+end 
+
+// expected c64
+initial
+begin
+	c64_expected = 1'bX;
+	c64_expected = #999000 1'b0;
+end 
+// expected \int [ 4 ]
+initial
+begin
+	int_expected[4] = 1'bX;
+	int_expected[4] = #999000 1'b0;
+end 
+// expected \int [ 3 ]
+initial
+begin
+	int_expected[3] = 1'bX;
+	int_expected[3] = #999000 1'b0;
+end 
+// expected \int [ 2 ]
+initial
+begin
+	int_expected[2] = 1'bX;
+	int_expected[2] = #999000 1'b0;
+end 
+// expected \int [ 1 ]
+initial
+begin
+	int_expected[1] = 1'bX;
+	int_expected[1] = #999000 1'b0;
+end 
+// expected \int [ 0 ]
+initial
+begin
+	int_expected[0] = 1'bX;
+	int_expected[0] = #999000 1'b0;
 end 
 // generate trigger
-always @(CLKout_expected or CLKout)
+always @(c32_expected or c32 or c64_expected or c64 or int_expected or int)
 begin
 	trigger <= ~trigger;
 end
@@ -120,21 +174,99 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected CLKout = %b | ",CLKout_expected_prev);
-	$display("| real CLKout = %b | ",CLKout_prev);
+	$display("| expected c32 = %b | expected c64 = %b | expected int = %b | ",c32_expected_prev,c64_expected_prev,int_expected_prev);
+	$display("| real c32 = %b | real c64 = %b | real int = %b | ",c32_prev,c64_prev,int_prev);
 `endif
 	if (
-		( CLKout_expected_prev !== 1'bx ) && ( CLKout_prev !== CLKout_expected_prev )
-		&& ((CLKout_expected_prev !== last_CLKout_exp) ||
+		( c32_expected_prev !== 1'bx ) && ( c32_prev !== c32_expected_prev )
+		&& ((c32_expected_prev !== last_c32_exp) ||
 			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port CLKout :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", CLKout_expected_prev);
-		$display ("     Real value = %b", CLKout_prev);
+		$display ("ERROR! Vector Mismatch for output port c32 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", c32_expected_prev);
+		$display ("     Real value = %b", c32_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[1] = 1'b0;
-		last_CLKout_exp = CLKout_expected_prev;
+		last_c32_exp = c32_expected_prev;
+	end
+	if (
+		( c64_expected_prev !== 1'bx ) && ( c64_prev !== c64_expected_prev )
+		&& ((c64_expected_prev !== last_c64_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port c64 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", c64_expected_prev);
+		$display ("     Real value = %b", c64_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_c64_exp = c64_expected_prev;
+	end
+	if (
+		( int_expected_prev[0] !== 1'bx ) && ( int_prev[0] !== int_expected_prev[0] )
+		&& ((int_expected_prev[0] !== last_int_exp[0]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port int[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", int_expected_prev);
+		$display ("     Real value = %b", int_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_int_exp[0] = int_expected_prev[0];
+	end
+	if (
+		( int_expected_prev[1] !== 1'bx ) && ( int_prev[1] !== int_expected_prev[1] )
+		&& ((int_expected_prev[1] !== last_int_exp[1]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port int[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", int_expected_prev);
+		$display ("     Real value = %b", int_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_int_exp[1] = int_expected_prev[1];
+	end
+	if (
+		( int_expected_prev[2] !== 1'bx ) && ( int_prev[2] !== int_expected_prev[2] )
+		&& ((int_expected_prev[2] !== last_int_exp[2]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port int[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", int_expected_prev);
+		$display ("     Real value = %b", int_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_int_exp[2] = int_expected_prev[2];
+	end
+	if (
+		( int_expected_prev[3] !== 1'bx ) && ( int_prev[3] !== int_expected_prev[3] )
+		&& ((int_expected_prev[3] !== last_int_exp[3]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port int[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", int_expected_prev);
+		$display ("     Real value = %b", int_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_int_exp[3] = int_expected_prev[3];
+	end
+	if (
+		( int_expected_prev[4] !== 1'bx ) && ( int_prev[4] !== int_expected_prev[4] )
+		&& ((int_expected_prev[4] !== last_int_exp[4]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port int[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", int_expected_prev);
+		$display ("     Real value = %b", int_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_int_exp[4] = int_expected_prev[4];
 	end
 
 	trigger <= ~trigger;
@@ -143,7 +275,7 @@ initial
 
 begin 
 $timeformat(-12,3," ps",6);
-#1000000;
+#50000000;
 if (nummismatches > 0)
 	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
 else
@@ -152,46 +284,166 @@ $finish;
 end 
 endmodule
 
-module FFTDivider32_vlg_vec_tst();
+module CODECSystem_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg CLK;
-reg T;
+reg CPUCLK;
+reg [23:0] DAdata;
 // wires                                               
-wire CLKout;
+wire c32;
+wire c64;
+wire [4:0] int;
 
 wire sampler;                             
 
 // assign statements (if any)                          
-FFTDivider32 i1 (
+CODECSystem i1 (
 // port map - connection between master ports and signals/registers   
-	.CLK(CLK),
-	.CLKout(CLKout),
-	.T(T)
+	.c32(c32),
+	.c64(c64),
+	.CPUCLK(CPUCLK),
+	.DAdata(DAdata),
+	.\int (int)
 );
 
-// CLK
+// CPUCLK
 always
 begin
-	CLK = 1'b0;
-	CLK = #5000 1'b1;
-	#5000;
+	CPUCLK = 1'b0;
+	CPUCLK = #10000 1'b1;
+	#10000;
 end 
-
-// T
+// DAdata[ 23 ]
 initial
 begin
-	T = 1'b1;
+	DAdata[23] = 1'b0;
+end 
+// DAdata[ 22 ]
+initial
+begin
+	DAdata[22] = 1'b0;
+end 
+// DAdata[ 21 ]
+initial
+begin
+	DAdata[21] = 1'b0;
+end 
+// DAdata[ 20 ]
+initial
+begin
+	DAdata[20] = 1'b0;
+end 
+// DAdata[ 19 ]
+initial
+begin
+	DAdata[19] = 1'b0;
+end 
+// DAdata[ 18 ]
+initial
+begin
+	DAdata[18] = 1'b0;
+end 
+// DAdata[ 17 ]
+initial
+begin
+	DAdata[17] = 1'b0;
+end 
+// DAdata[ 16 ]
+initial
+begin
+	DAdata[16] = 1'b0;
+end 
+// DAdata[ 15 ]
+initial
+begin
+	DAdata[15] = 1'b0;
+end 
+// DAdata[ 14 ]
+initial
+begin
+	DAdata[14] = 1'b0;
+end 
+// DAdata[ 13 ]
+initial
+begin
+	DAdata[13] = 1'b0;
+end 
+// DAdata[ 12 ]
+initial
+begin
+	DAdata[12] = 1'b0;
+end 
+// DAdata[ 11 ]
+initial
+begin
+	DAdata[11] = 1'b0;
+end 
+// DAdata[ 10 ]
+initial
+begin
+	DAdata[10] = 1'b0;
+end 
+// DAdata[ 9 ]
+initial
+begin
+	DAdata[9] = 1'b0;
+end 
+// DAdata[ 8 ]
+initial
+begin
+	DAdata[8] = 1'b0;
+end 
+// DAdata[ 7 ]
+initial
+begin
+	DAdata[7] = 1'b0;
+end 
+// DAdata[ 6 ]
+initial
+begin
+	DAdata[6] = 1'b0;
+end 
+// DAdata[ 5 ]
+initial
+begin
+	DAdata[5] = 1'b0;
+end 
+// DAdata[ 4 ]
+initial
+begin
+	DAdata[4] = 1'b0;
+end 
+// DAdata[ 3 ]
+initial
+begin
+	DAdata[3] = 1'b0;
+end 
+// DAdata[ 2 ]
+initial
+begin
+	DAdata[2] = 1'b0;
+end 
+// DAdata[ 1 ]
+initial
+begin
+	DAdata[1] = 1'b0;
+end 
+// DAdata[ 0 ]
+initial
+begin
+	DAdata[0] = 1'b0;
 end 
 
-FFTDivider32_vlg_sample_tst tb_sample (
-	.CLK(CLK),
-	.T(T),
+CODECSystem_vlg_sample_tst tb_sample (
+	.CPUCLK(CPUCLK),
+	.DAdata(DAdata),
 	.sampler_tx(sampler)
 );
 
-FFTDivider32_vlg_check_tst tb_out(
-	.CLKout(CLKout),
+CODECSystem_vlg_check_tst tb_out(
+	.c32(c32),
+	.c64(c64),
+	.int(int),
 	.sampler_rx(sampler)
 );
 endmodule

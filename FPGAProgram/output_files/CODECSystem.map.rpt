@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CODECSystem
-Wed Aug 26 19:47:43 2015
+Fri Aug 28 20:41:24 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -10,14 +10,7 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -44,20 +37,20 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 26 19:47:43 2015      ;
+; Analysis & Synthesis Status        ; Failed - Fri Aug 28 20:41:24 2015          ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                      ; CODECSystem                                ;
 ; Top-level Entity Name              ; CODECSystem                                ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 16                                         ;
-;     Total combinational functions  ; 16                                         ;
-;     Dedicated logic registers      ; 11                                         ;
-; Total registers                    ; 11                                         ;
-; Total pins                         ; 32                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -157,125 +150,12 @@ agreement for further details.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-6         ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-; CODECSystem.vhd                  ; yes             ; User VHDL File                     ; C:/Users/Helder/Documents/PI-VI/FPGAProgram/CODECSystem.vhd    ;         ;
-; ClockDivider32.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Helder/Documents/PI-VI/FPGAProgram/ClockDivider32.bdf ;         ;
-; ClockDivider64.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Helder/Documents/PI-VI/FPGAProgram/ClockDivider64.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 16     ;
-;                                             ;        ;
-; Total combinational functions               ; 16     ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 0      ;
-;     -- 3 input functions                    ; 1      ;
-;     -- <=2 input functions                  ; 15     ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 13     ;
-;     -- arithmetic mode                      ; 3      ;
-;                                             ;        ;
-; Total registers                             ; 11     ;
-;     -- Dedicated logic registers            ; 11     ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 32     ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-; Maximum fan-out node                        ; Add0~0 ;
-; Maximum fan-out                             ; 3      ;
-; Total fan-out                               ; 81     ;
-; Average fan-out                             ; 0.89   ;
-+---------------------------------------------+--------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
-; |CODECSystem               ; 16 (5)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |CODECSystem                      ; work         ;
-;    |ClockDivider32:CLKD1|  ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CODECSystem|ClockDivider32:CLKD1 ; work         ;
-;    |ClockDivider64:CLKD2|  ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CODECSystem|ClockDivider64:CLKD2 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; int[0]~0                                               ;   ;
-; int[1]~1                                               ;   ;
-; int[2]~2                                               ;   ;
-; int[3]~3                                               ;   ;
-; int[4]~4                                               ;   ;
-; Number of logic cells representing combinational loops ; 5 ;
-+--------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 11    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 32                          ;
-; cycloneiii_ff         ; 11                          ;
-;     plain             ; 11                          ;
-; cycloneiii_lcell_comb ; 16                          ;
-;     arith             ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 13                          ;
-;         1 data inputs ; 13                          ;
-;                       ;                             ;
-; Max LUT depth         ; 1.30                        ;
-; Average LUT depth     ; 1.04                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -284,7 +164,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Wed Aug 26 19:47:40 2015
+    Info: Processing started: Fri Aug 28 20:41:23 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CODECSystem -c CODECSystem
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file codecsystem.vhd
@@ -297,45 +177,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file clockdi
     Info (12023): Found entity 1: ClockDivider32
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider64.bdf
     Info (12023): Found entity 1: ClockDivider64
-Info (12127): Elaborating entity "CODECSystem" for the top level hierarchy
-Info (12128): Elaborating entity "ClockDivider32" for hierarchy "ClockDivider32:CLKD1"
-Info (12128): Elaborating entity "ClockDivider64" for hierarchy "ClockDivider64:CLKD2"
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 24 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "DACDAT[0]"
-    Warning (15610): No output dependent on input pin "DACDAT[1]"
-    Warning (15610): No output dependent on input pin "DACDAT[2]"
-    Warning (15610): No output dependent on input pin "DACDAT[3]"
-    Warning (15610): No output dependent on input pin "DACDAT[4]"
-    Warning (15610): No output dependent on input pin "DACDAT[5]"
-    Warning (15610): No output dependent on input pin "DACDAT[6]"
-    Warning (15610): No output dependent on input pin "DACDAT[7]"
-    Warning (15610): No output dependent on input pin "DACDAT[8]"
-    Warning (15610): No output dependent on input pin "DACDAT[9]"
-    Warning (15610): No output dependent on input pin "DACDAT[10]"
-    Warning (15610): No output dependent on input pin "DACDAT[11]"
-    Warning (15610): No output dependent on input pin "DACDAT[12]"
-    Warning (15610): No output dependent on input pin "DACDAT[13]"
-    Warning (15610): No output dependent on input pin "DACDAT[14]"
-    Warning (15610): No output dependent on input pin "DACDAT[15]"
-    Warning (15610): No output dependent on input pin "DACDAT[16]"
-    Warning (15610): No output dependent on input pin "DACDAT[17]"
-    Warning (15610): No output dependent on input pin "DACDAT[18]"
-    Warning (15610): No output dependent on input pin "DACDAT[19]"
-    Warning (15610): No output dependent on input pin "DACDAT[20]"
-    Warning (15610): No output dependent on input pin "DACDAT[21]"
-    Warning (15610): No output dependent on input pin "DACDAT[22]"
-    Warning (15610): No output dependent on input pin "DACDAT[23]"
-Info (21057): Implemented 48 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 25 input pins
-    Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 16 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 661 megabytes
-    Info: Processing ended: Wed Aug 26 19:47:43 2015
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+Error (10327): VHDL error at CODECSystem.vhd(55): can't determine definition of operator ""+"" -- found 0 possible definitions File: C:/Users/Helder/Documents/PI-VI/FPGAProgram/CODECSystem.vhd Line: 55
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 593 megabytes
+    Error: Processing ended: Fri Aug 28 20:41:24 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 

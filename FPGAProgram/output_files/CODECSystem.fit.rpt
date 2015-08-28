@@ -1,5 +1,5 @@
 Fitter report for CODECSystem
-Wed Aug 26 19:48:06 2015
+Fri Aug 28 20:04:56 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -11,38 +11,39 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
   3. Fitter Settings
   4. Parallel Compilation
   5. I/O Assignment Warnings
-  6. Incremental Compilation Preservation Summary
-  7. Incremental Compilation Partition Settings
-  8. Incremental Compilation Placement Preservation
-  9. Pin-Out File
- 10. Fitter Resource Usage Summary
- 11. Fitter Partition Statistics
- 12. Input Pins
- 13. Output Pins
- 14. Dual Purpose and Dedicated Pins
- 15. I/O Bank Usage
- 16. All Package Pins
- 17. Fitter Resource Utilization by Entity
- 18. Delay Chain Summary
- 19. Pad To Core Delay Chain Fanout
- 20. Control Signals
- 21. Global & Other Fast Signals
- 22. Non-Global High Fan-Out Signals
- 23. Routing Usage Summary
- 24. LAB Logic Elements
- 25. LAB-wide Signals
- 26. LAB Signals Sourced
- 27. LAB Signals Sourced Out
- 28. LAB Distinct Inputs
- 29. I/O Rules Summary
- 30. I/O Rules Details
- 31. I/O Rules Matrix
- 32. Fitter Device Options
- 33. Operating Settings and Conditions
- 34. Estimated Delay Added for Hold Timing Summary
- 35. Estimated Delay Added for Hold Timing Details
- 36. Fitter Messages
- 37. Fitter Suppressed Messages
+  6. Ignored Assignments
+  7. Incremental Compilation Preservation Summary
+  8. Incremental Compilation Partition Settings
+  9. Incremental Compilation Placement Preservation
+ 10. Pin-Out File
+ 11. Fitter Resource Usage Summary
+ 12. Fitter Partition Statistics
+ 13. Input Pins
+ 14. Output Pins
+ 15. Dual Purpose and Dedicated Pins
+ 16. I/O Bank Usage
+ 17. All Package Pins
+ 18. Fitter Resource Utilization by Entity
+ 19. Delay Chain Summary
+ 20. Pad To Core Delay Chain Fanout
+ 21. Control Signals
+ 22. Global & Other Fast Signals
+ 23. Non-Global High Fan-Out Signals
+ 24. Routing Usage Summary
+ 25. LAB Logic Elements
+ 26. LAB-wide Signals
+ 27. LAB Signals Sourced
+ 28. LAB Signals Sourced Out
+ 29. LAB Distinct Inputs
+ 30. I/O Rules Summary
+ 31. I/O Rules Details
+ 32. I/O Rules Matrix
+ 33. Fitter Device Options
+ 34. Operating Settings and Conditions
+ 35. Estimated Delay Added for Hold Timing Summary
+ 36. Estimated Delay Added for Hold Timing Details
+ 37. Fitter Messages
+ 38. Fitter Suppressed Messages
 
 
 
@@ -69,17 +70,17 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Wed Aug 26 19:48:06 2015      ;
+; Fitter Status                      ; Successful - Fri Aug 28 20:04:56 2015      ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                      ; CODECSystem                                ;
 ; Top-level Entity Name              ; CODECSystem                                ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 24 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 15 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 11 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 11                                         ;
+; Total logic elements               ; 33 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 19 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 20 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 20                                         ;
 ; Total pins                         ; 32 / 529 ( 6 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                      ;
@@ -155,12 +156,12 @@ agreement for further details.
 ; Number detected on machine ; 6           ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 2.19        ;
+; Average used               ; 2.05        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;  23.8%      ;
+;     Processors 2-6         ;  21.1%      ;
 +----------------------------+-------------+
 
 
@@ -169,7 +170,7 @@ agreement for further details.
 +----------+--------------------------------------+
 ; Pin Name ; Reason                               ;
 +----------+--------------------------------------+
-; c32      ; Missing drive strength and slew rate ;
+; BCLK     ; Missing drive strength and slew rate ;
 ; c64      ; Missing drive strength and slew rate ;
 ; int[0]   ; Missing drive strength and slew rate ;
 ; int[1]   ; Missing drive strength and slew rate ;
@@ -179,14 +180,24 @@ agreement for further details.
 +----------+--------------------------------------+
 
 
++----------------------------------------------------------------------------------------+
+; Ignored Assignments                                                                    ;
++----------+----------------+--------------+------------+---------------+----------------+
+; Name     ; Ignored Entity ; Ignored From ; Ignored To ; Ignored Value ; Ignored Source ;
++----------+----------------+--------------+------------+---------------+----------------+
+; Location ;                ;              ; DACCLK     ; PIN_E3        ; QSF Assignment ;
+; Location ;                ;              ; DACDAT     ; PIN_D1        ; QSF Assignment ;
++----------+----------------+--------------+------------+---------------+----------------+
+
+
 +--------------------------------------------------------------------------------------------------+
 ; Incremental Compilation Preservation Summary                                                     ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 103 ) ; 0.00 % ( 0 / 103 )         ; 0.00 % ( 0 / 103 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 103 ) ; 0.00 % ( 0 / 103 )         ; 0.00 % ( 0 / 103 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 115 ) ; 0.00 % ( 0 / 115 )         ; 0.00 % ( 0 / 115 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 115 ) ; 0.00 % ( 0 / 115 )         ; 0.00 % ( 0 / 115 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -209,7 +220,7 @@ agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 93 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 105 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -225,23 +236,23 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 24 / 114,480 ( < 1 % ) ;
+; Total logic elements                        ; 33 / 114,480 ( < 1 % ) ;
 ;     -- Combinational with no register       ; 13                     ;
-;     -- Register only                        ; 9                      ;
-;     -- Combinational with a register        ; 2                      ;
+;     -- Register only                        ; 14                     ;
+;     -- Combinational with a register        ; 6                      ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 0                      ;
-;     -- 3 input functions                    ; 1                      ;
-;     -- <=2 input functions                  ; 14                     ;
-;     -- Register only                        ; 9                      ;
+;     -- 4 input functions                    ; 1                      ;
+;     -- 3 input functions                    ; 3                      ;
+;     -- <=2 input functions                  ; 15                     ;
+;     -- Register only                        ; 14                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 12                     ;
-;     -- arithmetic mode                      ; 3                      ;
+;     -- normal mode                          ; 15                     ;
+;     -- arithmetic mode                      ; 4                      ;
 ;                                             ;                        ;
-; Total registers*                            ; 11 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 11 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 20 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 20 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )      ;
 ;                                             ;                        ;
 ; Total LABs:  partially or completely used   ; 7 / 7,155 ( < 1 % )    ;
@@ -262,11 +273,11 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%     ;
-; Peak interconnect usage (total/H/V)         ; 0.2% / 0.1% / 0.2%     ;
-; Maximum fan-out                             ; 3                      ;
-; Highest non-global fan-out                  ; 3                      ;
-; Total fan-out                               ; 94                     ;
-; Average fan-out                             ; 0.86                   ;
+; Peak interconnect usage (total/H/V)         ; 0.1% / 0.1% / 0.1%     ;
+; Maximum fan-out                             ; 11                     ;
+; Highest non-global fan-out                  ; 5                      ;
+; Total fan-out                               ; 127                    ;
+; Average fan-out                             ; 1.02                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -279,23 +290,23 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 24 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total logic elements                        ; 33 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- Combinational with no register       ; 13                    ; 0                              ;
-;     -- Register only                        ; 9                     ; 0                              ;
-;     -- Combinational with a register        ; 2                     ; 0                              ;
+;     -- Register only                        ; 14                    ; 0                              ;
+;     -- Combinational with a register        ; 6                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 0                     ; 0                              ;
-;     -- 3 input functions                    ; 1                     ; 0                              ;
-;     -- <=2 input functions                  ; 14                    ; 0                              ;
-;     -- Register only                        ; 9                     ; 0                              ;
+;     -- 4 input functions                    ; 1                     ; 0                              ;
+;     -- 3 input functions                    ; 3                     ; 0                              ;
+;     -- <=2 input functions                  ; 15                    ; 0                              ;
+;     -- Register only                        ; 14                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 12                    ; 0                              ;
-;     -- arithmetic mode                      ; 3                     ; 0                              ;
+;     -- normal mode                          ; 15                    ; 0                              ;
+;     -- arithmetic mode                      ; 4                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 11                    ; 0                              ;
-;     -- Dedicated logic registers            ; 11 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 20                    ; 0                              ;
+;     -- Dedicated logic registers            ; 20 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total LABs:  partially or completely used   ; 7 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
@@ -314,8 +325,8 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 89                    ; 5                              ;
-;     -- Registered Connections               ; 22                    ; 0                              ;
+;     -- Total Connections                    ; 122                   ; 5                              ;
+;     -- Registered Connections               ; 43                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -347,31 +358,31 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 +------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ;
 +------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
-; CPUCLK     ; J1    ; 1        ; 0            ; 36           ; 7            ; 2                     ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[0]  ; G6    ; 1        ; 0            ; 67           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[10] ; C23   ; 7        ; 100          ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[11] ; J5    ; 1        ; 0            ; 50           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[12] ; AC24  ; 5        ; 115          ; 4            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[13] ; AB20  ; 4        ; 100          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[14] ; G13   ; 8        ; 38           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[15] ; D24   ; 7        ; 98           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[16] ; AB7   ; 3        ; 16           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[17] ; F12   ; 8        ; 33           ; 73           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[18] ; F18   ; 7        ; 87           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[19] ; Y17   ; 4        ; 96           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[1]  ; G2    ; 1        ; 0            ; 55           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[20] ; D8    ; 8        ; 16           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[21] ; H23   ; 6        ; 115          ; 65           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[22] ; N4    ; 1        ; 0            ; 46           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[23] ; D18   ; 7        ; 85           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[2]  ; AE23  ; 4        ; 105          ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[3]  ; C3    ; 8        ; 1            ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[4]  ; AB21  ; 4        ; 109          ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[5]  ; D25   ; 7        ; 105          ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[6]  ; M28   ; 6        ; 115          ; 45           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[7]  ; AC2   ; 2        ; 0            ; 24           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[8]  ; P21   ; 5        ; 115          ; 36           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; DACDAT[9]  ; C25   ; 7        ; 105          ; 73           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; CPUCLK     ; Y2    ; 2        ; 0            ; 36           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[0]  ; L28   ; 6        ; 115          ; 47           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DAdata[10] ; AA24  ; 5        ; 115          ; 9            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[11] ; AB23  ; 5        ; 115          ; 7            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[12] ; AB24  ; 5        ; 115          ; 5            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[13] ; AC24  ; 5        ; 115          ; 4            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[14] ; AB25  ; 5        ; 115          ; 16           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[15] ; AC25  ; 5        ; 115          ; 4            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[16] ; AB26  ; 5        ; 115          ; 15           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[17] ; AD26  ; 5        ; 115          ; 10           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[18] ; AC26  ; 5        ; 115          ; 11           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[19] ; AB27  ; 5        ; 115          ; 18           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[1]  ; A10   ; 8        ; 38           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DAdata[20] ; AD27  ; 5        ; 115          ; 13           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[21] ; AC27  ; 5        ; 115          ; 15           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[22] ; AC28  ; 5        ; 115          ; 14           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[23] ; AB28  ; 5        ; 115          ; 17           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[2]  ; C12   ; 8        ; 52           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DAdata[3]  ; AB20  ; 4        ; 100          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DAdata[4]  ; E27   ; 6        ; 115          ; 57           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DAdata[5]  ; AG8   ; 3        ; 18           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; DAdata[6]  ; Y23   ; 5        ; 115          ; 14           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[7]  ; Y24   ; 5        ; 115          ; 13           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[8]  ; AA22  ; 5        ; 115          ; 6            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; DAdata[9]  ; AA23  ; 5        ; 115          ; 10           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 +------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
 
@@ -380,13 +391,13 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 +--------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +--------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; c32    ; B11   ; 8        ; 42           ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; c64    ; J12   ; 8        ; 40           ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; int[0] ; R27   ; 5        ; 115          ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; int[1] ; T21   ; 5        ; 115          ; 32           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; int[2] ; R26   ; 5        ; 115          ; 33           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; int[3] ; R28   ; 5        ; 115          ; 34           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; int[4] ; R25   ; 5        ; 115          ; 33           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; BCLK   ; R7    ; 2        ; 0            ; 35           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; c64    ; F17   ; 7        ; 67           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; int[0] ; F15   ; 7        ; 58           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; int[1] ; J15   ; 7        ; 60           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; int[2] ; E15   ; 7        ; 58           ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; int[3] ; H15   ; 7        ; 60           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; int[4] ; D15   ; 7        ; 58           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 +--------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -395,7 +406,6 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 +----------+-----------------------------+--------------------------+-------------------------+---------------------------+
 ; Location ; Pin Name                    ; Reserved As              ; User Signal Name        ; Pin Type                  ;
 +----------+-----------------------------+--------------------------+-------------------------+---------------------------+
-; G6       ; DIFFIO_L3p, nRESET          ; Use as regular IO        ; DACDAT[0]               ; Dual Purpose Pin          ;
 ; F4       ; DIFFIO_L5n, DATA1, ASDO     ; As input tri-stated      ; ~ALTERA_ASDO_DATA1~     ; Dual Purpose Pin          ;
 ; E2       ; DIFFIO_L8p, FLASH_nCE, nCSO ; As input tri-stated      ; ~ALTERA_FLASH_nCE_nCSO~ ; Dual Purpose Pin          ;
 ; M6       ; nSTATUS                     ; -                        ; -                       ; Dedicated Programming Pin ;
@@ -403,34 +413,32 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; N7       ; DATA0                       ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
 ; P4       ; nCONFIG                     ; -                        ; -                       ; Dedicated Programming Pin ;
 ; R8       ; nCE                         ; -                        ; -                       ; Dedicated Programming Pin ;
-; T21      ; DIFFIO_R29p, DEV_CLRn       ; Use as regular IO        ; int[1]                  ; Dual Purpose Pin          ;
 ; P24      ; CONF_DONE                   ; -                        ; -                       ; Dedicated Programming Pin ;
 ; N22      ; MSEL0                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; P23      ; MSEL1                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; M22      ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; P22      ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; P28      ; DIFFIO_R23n, nCEO           ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
-; D18      ; DIFFIO_T50p, PADD2          ; Use as regular IO        ; DACDAT[23]              ; Dual Purpose Pin          ;
-; B11      ; DIFFIO_T25p, DATA3          ; Use as regular IO        ; c32                     ; Dual Purpose Pin          ;
-; G13      ; DIFFIO_T22n, PADD19         ; Use as regular IO        ; DACDAT[14]              ; Dual Purpose Pin          ;
-; F12      ; DIFFIO_T20p, DATA13         ; Use as regular IO        ; DACDAT[17]              ; Dual Purpose Pin          ;
+; D15      ; DIFFIO_T32p, PADD14         ; Use as regular IO        ; int[4]                  ; Dual Purpose Pin          ;
+; C12      ; DIFFIO_T29n, PADD16         ; Use as regular IO        ; DAdata[2]               ; Dual Purpose Pin          ;
+; A10      ; DIFFIO_T23n, PADD18         ; Use as regular IO        ; DAdata[1]               ; Dual Purpose Pin          ;
 +----------+-----------------------------+--------------------------+-------------------------+---------------------------+
 
 
-+-----------------------------------------------------------+
-; I/O Bank Usage                                            ;
-+----------+-----------------+---------------+--------------+
-; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
-+----------+-----------------+---------------+--------------+
-; 1        ; 9 / 56 ( 16 % ) ; 2.5V          ; --           ;
-; 2        ; 1 / 63 ( 2 % )  ; 2.5V          ; --           ;
-; 3        ; 1 / 73 ( 1 % )  ; 2.5V          ; --           ;
-; 4        ; 4 / 71 ( 6 % )  ; 2.5V          ; --           ;
-; 5        ; 7 / 65 ( 11 % ) ; 2.5V          ; --           ;
-; 6        ; 3 / 58 ( 5 % )  ; 2.5V          ; --           ;
-; 7        ; 6 / 72 ( 8 % )  ; 2.5V          ; --           ;
-; 8        ; 6 / 71 ( 8 % )  ; 2.5V          ; --           ;
-+----------+-----------------+---------------+--------------+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 4 / 56 ( 7 % )   ; 2.5V          ; --           ;
+; 2        ; 2 / 63 ( 3 % )   ; 2.5V          ; --           ;
+; 3        ; 1 / 73 ( 1 % )   ; 2.5V          ; --           ;
+; 4        ; 1 / 71 ( 1 % )   ; 2.5V          ; --           ;
+; 5        ; 18 / 65 ( 28 % ) ; 2.5V          ; --           ;
+; 6        ; 3 / 58 ( 5 % )   ; 2.5V          ; --           ;
+; 7        ; 6 / 72 ( 8 % )   ; 2.5V          ; --           ;
+; 8        ; 2 / 71 ( 3 % )   ; 2.5V          ; --           ;
++----------+------------------+---------------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -446,7 +454,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; A7       ; 501        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A8       ; 517        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A9       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; A10      ; 491        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; A10      ; 491        ; 8        ; DAdata[1]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A11      ; 487        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A12      ; 482        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A13      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -485,9 +493,9 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; AA19     ; 264        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA20     ;            ;          ; GNDA4                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA21     ; 269        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AA22     ; 275        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AA23     ; 280        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AA24     ; 279        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; AA22     ; 275        ; 5        ; DAdata[8]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AA23     ; 280        ; 5        ; DAdata[9]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AA24     ; 279        ; 5        ; DAdata[10]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AA25     ; 294        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AA26     ; 293        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AA27     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -498,7 +506,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; AB4      ; 121        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; AB5      ; 127        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB6      ; 126        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB7      ; 152        ; 3        ; DACDAT[16]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB7      ; 152        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB8      ; 148        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB9      ; 147        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB10     ; 173        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -511,17 +519,17 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; AB17     ; 242        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB18     ; 254        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB19     ; 253        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AB20     ; 257        ; 4        ; DACDAT[13]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; AB21     ; 266        ; 4        ; DACDAT[4]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB20     ; 257        ; 4        ; DAdata[3]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB21     ; 266        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB22     ; 265        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AB23     ; 276        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB24     ; 274        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB25     ; 292        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB26     ; 291        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB27     ; 296        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB28     ; 295        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; AB23     ; 276        ; 5        ; DAdata[11]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AB24     ; 274        ; 5        ; DAdata[12]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AB25     ; 292        ; 5        ; DAdata[14]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AB26     ; 291        ; 5        ; DAdata[16]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AB27     ; 296        ; 5        ; DAdata[19]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AB28     ; 295        ; 5        ; DAdata[23]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AC1      ; 94         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AC2      ; 93         ; 2        ; DACDAT[7]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AC2      ; 93         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AC3      ; 95         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AC4      ; 125        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AC5      ; 124        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -543,11 +551,11 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; AC21     ; 258        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AC22     ; 267        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AC23     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AC24     ; 273        ; 5        ; DACDAT[12]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; AC25     ; 272        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AC26     ; 282        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AC27     ; 290        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AC28     ; 289        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; AC24     ; 273        ; 5        ; DAdata[13]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AC25     ; 272        ; 5        ; DAdata[15]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AC26     ; 282        ; 5        ; DAdata[18]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AC27     ; 290        ; 5        ; DAdata[21]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AC28     ; 289        ; 5        ; DAdata[22]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AD1      ; 98         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AD2      ; 97         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AD3      ; 96         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -573,8 +581,8 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; AD23     ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AD24     ; 260        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD25     ; 255        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AD26     ; 281        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AD27     ; 286        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; AD26     ; 281        ; 5        ; DAdata[17]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; AD27     ; 286        ; 5        ; DAdata[20]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AD28     ; 285        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE1      ; 106        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE2      ; 105        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -598,7 +606,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; AE20     ; 235        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE21     ; 238        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE22     ; 251        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AE23     ; 261        ; 4        ; DACDAT[2]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE23     ; 261        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE24     ; 256        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE25     ; 243        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE26     ; 278        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -639,7 +647,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; AG5      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG6      ; 145        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG7      ; 150        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AG8      ; 156        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AG8      ; 156        ; 3        ; DAdata[5]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AG9      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG10     ; 167        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG11     ; 175        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -696,7 +704,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; B8       ; 518        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B10      ; 492        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B11      ; 488        ; 8        ; c32                                                       ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B11      ; 488        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B12      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B13      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B14      ; 473        ; 8        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -716,7 +724,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; B28      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; C1       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C2       ; 1          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; C3       ; 543        ; 8        ; DACDAT[3]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C3       ; 543        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C4       ; 539        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C5       ; 538        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C6       ; 536        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -725,7 +733,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; C9       ; 510        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C10      ; 495        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C11      ; 508        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C12      ; 478        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C12      ; 478        ; 8        ; DAdata[2]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C13      ; 474        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C14      ; 476        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C15      ; 468        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -736,9 +744,9 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; C20      ; 431        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C21      ; 422        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C22      ; 418        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C23      ; 415        ; 7        ; DACDAT[10]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C23      ; 415        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C24      ; 416        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C25      ; 411        ; 7        ; DACDAT[9]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C25      ; 411        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C26      ; 400        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C27      ; 382        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C28      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -749,24 +757,24 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; D5       ; 537        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D6       ; 524        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D7       ; 522        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; D8       ; 520        ; 8        ; DACDAT[20]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; D8       ; 520        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D9       ; 511        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D10      ; 496        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D11      ; 509        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D12      ; 479        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D13      ; 475        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D14      ; 477        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; D15      ; 469        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; D15      ; 469        ; 7        ; int[4]                                                    ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D16      ; 461        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D17      ; 439        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; D18      ; 430        ; 7        ; DACDAT[23]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; D18      ; 430        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D19      ; 436        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D20      ; 432        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D21      ; 419        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D22      ; 402        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D23      ; 414        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; D24      ; 417        ; 7        ; DACDAT[15]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; D25      ; 410        ; 7        ; DACDAT[5]                                                 ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; D24      ; 417        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; D25      ; 410        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D26      ; 383        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D27      ; 381        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D28      ; 380        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -784,7 +792,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; E12      ; 497        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E13      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; E14      ; 486        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; E15      ; 467        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; E15      ; 467        ; 7        ; int[2]                                                    ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E16      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; E17      ; 456        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E18      ; 427        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -796,7 +804,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; E24      ; 433        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E25      ; 434        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E26      ; 378        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; E27      ; 375        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; E27      ; 375        ; 6        ; DAdata[4]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; E28      ; 374        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F1       ; 19         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F2       ; 18         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -809,13 +817,13 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; F9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F10      ; 512        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F11      ; 500        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; F12      ; 498        ; 8        ; DACDAT[17]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; F12      ; 498        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F13      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F14      ; 485        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; F15      ; 466        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; F15      ; 466        ; 7        ; int[0]                                                    ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; F16      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; F17      ; 455        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; F18      ; 428        ; 7        ; DACDAT[18]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; F17      ; 455        ; 7        ; c64                                                       ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; F18      ; 428        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F19      ; 420        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F21      ; 408        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -827,18 +835,18 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; F27      ; 373        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F28      ; 372        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G1       ; 26         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; G2       ; 25         ; 1        ; DACDAT[1]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G2       ; 25         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G3       ; 13         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G4       ; 12         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G5       ; 6          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; G6       ; 5          ; 1        ; DACDAT[0]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G6       ; 5          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G7       ; 530        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G8       ; 528        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G9       ; 525        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; G10      ; 513        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G11      ; 506        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G12      ; 503        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; G13      ; 493        ; 8        ; DACDAT[14]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; G13      ; 493        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G14      ; 484        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; G15      ; 457        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; G16      ; 453        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -868,7 +876,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; H12      ; 507        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H13      ; 494        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H14      ; 480        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; H15      ; 464        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; H15      ; 464        ; 7        ; int[3]                                                    ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; H16      ; 459        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H17      ; 454        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H18      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -876,27 +884,27 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; H20      ;            ;          ; GNDA2                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H21      ; 448        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H22      ; 399        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; H23      ; 391        ; 6        ; DACDAT[21]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H23      ; 391        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H24      ; 390        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H25      ; 377        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H26      ; 376        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H27      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H28      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; J1       ; 64         ; 1        ; CPUCLK                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J1       ; 64         ; 1        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; J2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J3       ; 23         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J4       ; 22         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; J5       ; 36         ; 1        ; DACDAT[11]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J5       ; 36         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J6       ; 35         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J7       ; 37         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J8       ;            ; --       ; VCCA3                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; J9       ;            ;          ; VCCD_PLL3                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; J10      ; 515        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J11      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; J12      ; 490        ; 8        ; c64                                                       ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; J12      ; 490        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J13      ; 489        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J14      ; 481        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; J15      ; 465        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; J15      ; 465        ; 7        ; int[1]                                                    ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J16      ; 458        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J17      ; 450        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -965,7 +973,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; L25      ; 369        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L26      ; 363        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L27      ; 358        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; L28      ; 357        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; L28      ; 357        ; 6        ; DAdata[0]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M1       ; 51         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M2       ; 50         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M3       ; 34         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -993,11 +1001,11 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; M25      ; 356        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M26      ; 355        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M27      ; 354        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; M28      ; 353        ; 6        ; DACDAT[6]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; M28      ; 353        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N1       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; N2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N3       ; 45         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; N4       ; 44         ; 1        ; DACDAT[22]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; N4       ; 44         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N5       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; N6       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N7       ; 56         ; 1        ; ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP          ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
@@ -1042,7 +1050,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; P18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; P19      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; P20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; P21      ; 334        ; 5        ; DACDAT[8]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P21      ; 334        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; P22      ; 343        ; 6        ; ^MSEL3                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P23      ; 341        ; 6        ; ^MSEL1                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P24      ; 339        ; 6        ; ^CONF_DONE                                                ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1056,7 +1064,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; R4       ; 74         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R5       ; 77         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R6       ; 70         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; R7       ; 69         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; R7       ; 69         ; 2        ; BCLK                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R8       ; 62         ; 1        ; ^nCE                                                      ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; R9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R10      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -1074,10 +1082,10 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; R22      ; 332        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R23      ; 331        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R24      ; 330        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; R25      ; 327        ; 5        ; int[4]                                                    ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; R26      ; 326        ; 5        ; int[2]                                                    ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; R27      ; 329        ; 5        ; int[0]                                                    ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; R28      ; 328        ; 5        ; int[3]                                                    ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R25      ; 327        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; R26      ; 326        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; R27      ; 329        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; R28      ; 328        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T1       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; T2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T3       ; 76         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1098,7 +1106,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; T18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T19      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; T20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; T21      ; 325        ; 5        ; int[1]                                                    ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T21      ; 325        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T22      ; 324        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T23      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T24      ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1191,7 +1199,7 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; W27      ; 301        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W28      ; 302        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y1       ; 66         ; 2        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; Y2       ; 65         ; 2        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; Y2       ; 65         ; 2        ; CPUCLK                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; Y3       ; 92         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y4       ; 91         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y5       ; 114        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1206,14 +1214,14 @@ The pin-out file can be found in C:/Users/Helder/Documents/PI-VI/FPGAProgram/out
 ; Y14      ; 197        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y15      ; 198        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y16      ; 250        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; Y17      ; 249        ; 4        ; DACDAT[19]                                                ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y17      ; 249        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y19      ; 263        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y20      ;            ;          ; VCCD_PLL4                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; Y21      ;            ; --       ; VCCA4                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; Y22      ; 320        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; Y23      ; 288        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; Y24      ; 287        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; Y23      ; 288        ; 5        ; DAdata[6]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; Y24      ; 287        ; 5        ; DAdata[7]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; Y25      ; 298        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y26      ; 297        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y27      ; 336        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -1227,9 +1235,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name               ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------+--------------+
-; |CODECSystem               ; 24 (4)      ; 11 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 13 (4)       ; 9 (0)             ; 2 (0)            ; |CODECSystem                      ; work         ;
-;    |ClockDivider32:CLKD1|  ; 9 (9)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 4 (4)             ; 1 (1)            ; |CODECSystem|ClockDivider32:CLKD1 ; work         ;
-;    |ClockDivider64:CLKD2|  ; 11 (11)     ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 5 (5)             ; 1 (1)            ; |CODECSystem|ClockDivider64:CLKD2 ; work         ;
+; |CODECSystem               ; 33 (14)     ; 20 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 13 (4)       ; 14 (5)            ; 6 (5)            ; |CODECSystem                      ; work         ;
+;    |ClockDivider32:CLKD1|  ; 10 (10)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 5 (5)             ; 0 (0)            ; |CODECSystem|ClockDivider32:CLKD1 ; work         ;
+;    |ClockDivider32:CLKD2|  ; 9 (9)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 4 (4)             ; 1 (1)            ; |CODECSystem|ClockDivider32:CLKD2 ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1239,31 +1247,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------+----------+---------------+---------------+-----------------------+-----+------+
 ; Name       ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
 +------------+----------+---------------+---------------+-----------------------+-----+------+
-; DACDAT[0]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[1]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[2]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[3]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[4]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[5]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[6]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[7]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[8]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[9]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[10] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[11] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[12] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[13] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[14] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[15] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[16] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[17] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[18] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[19] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[20] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[21] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[22] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; DACDAT[23] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; c32        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[0]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[1]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[2]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[3]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[4]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[5]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[6]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[7]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[8]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[9]  ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[10] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[11] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[12] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[13] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[14] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[15] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[16] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[17] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[18] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[19] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[20] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[21] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[22] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; DAdata[23] ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; BCLK       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; c64        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; int[0]     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; int[1]     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
@@ -1279,30 +1287,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; DACDAT[0]           ;                   ;         ;
-; DACDAT[1]           ;                   ;         ;
-; DACDAT[2]           ;                   ;         ;
-; DACDAT[3]           ;                   ;         ;
-; DACDAT[4]           ;                   ;         ;
-; DACDAT[5]           ;                   ;         ;
-; DACDAT[6]           ;                   ;         ;
-; DACDAT[7]           ;                   ;         ;
-; DACDAT[8]           ;                   ;         ;
-; DACDAT[9]           ;                   ;         ;
-; DACDAT[10]          ;                   ;         ;
-; DACDAT[11]          ;                   ;         ;
-; DACDAT[12]          ;                   ;         ;
-; DACDAT[13]          ;                   ;         ;
-; DACDAT[14]          ;                   ;         ;
-; DACDAT[15]          ;                   ;         ;
-; DACDAT[16]          ;                   ;         ;
-; DACDAT[17]          ;                   ;         ;
-; DACDAT[18]          ;                   ;         ;
-; DACDAT[19]          ;                   ;         ;
-; DACDAT[20]          ;                   ;         ;
-; DACDAT[21]          ;                   ;         ;
-; DACDAT[22]          ;                   ;         ;
-; DACDAT[23]          ;                   ;         ;
+; DAdata[0]           ;                   ;         ;
+; DAdata[1]           ;                   ;         ;
+; DAdata[2]           ;                   ;         ;
+; DAdata[3]           ;                   ;         ;
+; DAdata[4]           ;                   ;         ;
+; DAdata[5]           ;                   ;         ;
+; DAdata[6]           ;                   ;         ;
+; DAdata[7]           ;                   ;         ;
+; DAdata[8]           ;                   ;         ;
+; DAdata[9]           ;                   ;         ;
+; DAdata[10]          ;                   ;         ;
+; DAdata[11]          ;                   ;         ;
+; DAdata[12]          ;                   ;         ;
+; DAdata[13]          ;                   ;         ;
+; DAdata[14]          ;                   ;         ;
+; DAdata[15]          ;                   ;         ;
+; DAdata[16]          ;                   ;         ;
+; DAdata[17]          ;                   ;         ;
+; DAdata[18]          ;                   ;         ;
+; DAdata[19]          ;                   ;         ;
+; DAdata[20]          ;                   ;         ;
+; DAdata[21]          ;                   ;         ;
+; DAdata[22]          ;                   ;         ;
+; DAdata[23]          ;                   ;         ;
 ; CPUCLK              ;                   ;         ;
 +---------------------+-------------------+---------+
 
@@ -1312,26 +1320,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+----------------+---------+-------+--------+----------------------+------------------+---------------------------+
 ; Name                       ; Location       ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------+----------------+---------+-------+--------+----------------------+------------------+---------------------------+
-; CPUCLK                     ; PIN_J1         ; 2       ; Clock ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; ClockDivider32:CLKD1|inst  ; FF_X41_Y59_N11 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider32:CLKD1|inst1 ; FF_X41_Y59_N7  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider32:CLKD1|inst2 ; FF_X42_Y59_N17 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider32:CLKD1|inst3 ; FF_X43_Y59_N5  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider64:CLKD2|inst  ; FF_X38_Y55_N25 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider64:CLKD2|inst1 ; FF_X38_Y55_N7  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider64:CLKD2|inst2 ; FF_X39_Y55_N5  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider64:CLKD2|inst3 ; FF_X39_Y55_N7  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
-; ClockDivider64:CLKD2|inst4 ; FF_X40_Y55_N19 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; CPUCLK                     ; PIN_Y2         ; 1       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD1|inst  ; FF_X1_Y36_N17  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD1|inst1 ; FF_X1_Y36_N7   ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD1|inst2 ; FF_X2_Y36_N19  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD1|inst3 ; FF_X3_Y36_N17  ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD1|inst4 ; FF_X3_Y36_N1   ; 11      ; Clock ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; ClockDivider32:CLKD2|inst  ; FF_X69_Y70_N31 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD2|inst1 ; FF_X69_Y70_N29 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD2|inst2 ; FF_X68_Y70_N29 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
+; ClockDivider32:CLKD2|inst3 ; FF_X67_Y70_N17 ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
 +----------------------------+----------------+---------+-------+--------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                              ;
-+--------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name   ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CPUCLK ; PIN_J1   ; 2       ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
-+--------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                      ;
++----------------------------+--------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                       ; Location     ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------+--------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; ClockDivider32:CLKD1|inst4 ; FF_X3_Y36_N1 ; 11      ; 1                                    ; Global Clock         ; GCLK2            ; --                        ;
++----------------------------+--------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +----------------------------------------+
@@ -1339,36 +1347,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------+---------+
 ; Name                         ; Fan-Out ;
 +------------------------------+---------+
-; int[0]~5                     ; 3       ;
-; ClockDivider64:CLKD2|inst    ; 2       ;
-; ClockDivider64:CLKD2|inst1   ; 2       ;
+; i[4]                         ; 5       ;
+; Equal0~0                     ; 3       ;
+; i[3]                         ; 3       ;
+; i[2]                         ; 3       ;
+; i[1]                         ; 3       ;
+; i[0]                         ; 3       ;
+; ClockDivider32:CLKD2|inst    ; 2       ;
 ; ClockDivider32:CLKD1|inst    ; 2       ;
-; ClockDivider64:CLKD2|inst2   ; 2       ;
+; ClockDivider32:CLKD2|inst1   ; 2       ;
 ; ClockDivider32:CLKD1|inst1   ; 2       ;
-; ClockDivider64:CLKD2|inst3   ; 2       ;
+; ClockDivider32:CLKD2|inst2   ; 2       ;
 ; ClockDivider32:CLKD1|inst2   ; 2       ;
-; ClockDivider64:CLKD2|inst4   ; 2       ;
+; ClockDivider32:CLKD2|inst3   ; 2       ;
 ; ClockDivider32:CLKD1|inst3   ; 2       ;
-; ClockDivider64:CLKD2|inst5   ; 2       ;
+; ClockDivider32:CLKD2|inst4   ; 2       ;
 ; ClockDivider32:CLKD1|inst4   ; 2       ;
-; Add0~6                       ; 2       ;
-; Add0~4                       ; 2       ;
-; Add0~2                       ; 2       ;
-; Add0~0                       ; 2       ;
-; ClockDivider64:CLKD2|inst~0  ; 1       ;
-; ClockDivider64:CLKD2|inst1~0 ; 1       ;
+; CPUCLK~input                 ; 1       ;
+; ClockDivider32:CLKD2|inst~0  ; 1       ;
 ; ClockDivider32:CLKD1|inst~0  ; 1       ;
-; ClockDivider64:CLKD2|inst2~0 ; 1       ;
+; ClockDivider32:CLKD2|inst1~0 ; 1       ;
 ; ClockDivider32:CLKD1|inst1~0 ; 1       ;
-; ClockDivider64:CLKD2|inst3~0 ; 1       ;
+; ClockDivider32:CLKD2|inst2~0 ; 1       ;
 ; ClockDivider32:CLKD1|inst2~0 ; 1       ;
-; ClockDivider64:CLKD2|inst4~0 ; 1       ;
+; ClockDivider32:CLKD2|inst3~0 ; 1       ;
 ; ClockDivider32:CLKD1|inst3~0 ; 1       ;
-; ClockDivider64:CLKD2|inst5~0 ; 1       ;
+; ClockDivider32:CLKD2|inst4~0 ; 1       ;
 ; ClockDivider32:CLKD1|inst4~0 ; 1       ;
+; i~2                          ; 1       ;
+; i~1                          ; 1       ;
+; i~0                          ; 1       ;
+; int[4]~reg0                  ; 1       ;
+; int[3]~reg0                  ; 1       ;
+; int[2]~reg0                  ; 1       ;
+; int[1]~reg0                  ; 1       ;
+; int[0]~reg0                  ; 1       ;
+; Add0~8                       ; 1       ;
+; Add0~7                       ; 1       ;
+; Add0~6                       ; 1       ;
 ; Add0~5                       ; 1       ;
+; Add0~4                       ; 1       ;
 ; Add0~3                       ; 1       ;
+; Add0~2                       ; 1       ;
 ; Add0~1                       ; 1       ;
+; Add0~0                       ; 1       ;
 +------------------------------+---------+
 
 
@@ -1377,27 +1399,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 24 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 2 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 13 / 209,544 ( < 1 % ) ;
-; Direct links          ; 15 / 342,891 ( < 1 % ) ;
+; Block interconnects   ; 30 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 0 / 10,120 ( 0 % )     ;
+; C4 interconnects      ; 11 / 209,544 ( < 1 % ) ;
+; Direct links          ; 16 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 1 / 20 ( 5 % )         ;
-; Local interconnects   ; 15 / 119,088 ( < 1 % ) ;
+; Local interconnects   ; 18 / 119,088 ( < 1 % ) ;
 ; R24 interconnects     ; 0 / 9,963 ( 0 % )      ;
-; R4 interconnects      ; 9 / 289,782 ( < 1 % )  ;
+; R4 interconnects      ; 7 / 289,782 ( < 1 % )  ;
 +-----------------------+------------------------+
 
 
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 3.57) ; Number of LABs  (Total = 7) ;
+; Number of Logic Elements  (Average = 4.71) ; Number of LABs  (Total = 7) ;
 +--------------------------------------------+-----------------------------+
 ; 1                                          ; 0                           ;
-; 2                                          ; 1                           ;
-; 3                                          ; 2                           ;
+; 2                                          ; 2                           ;
+; 3                                          ; 1                           ;
 ; 4                                          ; 3                           ;
-; 5                                          ; 1                           ;
+; 5                                          ; 0                           ;
 ; 6                                          ; 0                           ;
 ; 7                                          ; 0                           ;
 ; 8                                          ; 0                           ;
@@ -1406,7 +1428,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 11                                         ; 0                           ;
 ; 12                                         ; 0                           ;
 ; 13                                         ; 0                           ;
-; 14                                         ; 0                           ;
+; 14                                         ; 1                           ;
 ; 15                                         ; 0                           ;
 ; 16                                         ; 0                           ;
 +--------------------------------------------+-----------------------------+
@@ -1415,24 +1437,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 0.86) ; Number of LABs  (Total = 7) ;
+; LAB-wide Signals  (Average = 1.00) ; Number of LABs  (Total = 7) ;
 +------------------------------------+-----------------------------+
-; 1 Clock                            ; 6                           ;
+; 1 Clock                            ; 7                           ;
 +------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 4.86) ; Number of LABs  (Total = 7) ;
+; Number of Signals Sourced  (Average = 7.00) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 1                           ;
-; 3                                           ; 0                           ;
+; 3                                           ; 1                           ;
 ; 4                                           ; 1                           ;
 ; 5                                           ; 2                           ;
-; 6                                           ; 3                           ;
+; 6                                           ; 1                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 0                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 0                           ;
+; 11                                          ; 0                           ;
+; 12                                          ; 0                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 0                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 0                           ;
+; 17                                          ; 0                           ;
+; 18                                          ; 0                           ;
+; 19                                          ; 0                           ;
+; 20                                          ; 0                           ;
+; 21                                          ; 0                           ;
+; 22                                          ; 0                           ;
+; 23                                          ; 0                           ;
+; 24                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -1453,10 +1493,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 0.86) ; Number of LABs  (Total = 7) ;
+; Number of Distinct Inputs  (Average = 1.00) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
-; 1                                           ; 6                           ;
+; 1                                           ; 7                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -1466,10 +1506,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; I/O Rules Statistic              ; Total ;
 +----------------------------------+-------+
 ; Total I/O Rules                  ; 30    ;
-; Number of I/O Rules Passed       ; 9     ;
+; Number of I/O Rules Passed       ; 12    ;
 ; Number of I/O Rules Failed       ; 0     ;
 ; Number of I/O Rules Unchecked    ; 0     ;
-; Number of I/O Rules Inapplicable ; 21    ;
+; Number of I/O Rules Inapplicable ; 18    ;
 +----------------------------------+-------+
 
 
@@ -1478,13 +1518,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
 ; Status       ; ID        ; Category                          ; Rule Description                                                                                     ; Severity ; Information                                                              ; Area                ; Extra Information ;
 +--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
-; Inapplicable ; IO_000001 ; Capacity Checks                   ; Number of pins in an I/O bank should not exceed the number of locations available.                   ; Critical ; No Location assignments found.                                           ; I/O                 ;                   ;
+; Pass         ; IO_000001 ; Capacity Checks                   ; Number of pins in an I/O bank should not exceed the number of locations available.                   ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
 ; Inapplicable ; IO_000002 ; Capacity Checks                   ; Number of clocks in an I/O bank should not exceed the number of clocks available.                    ; Critical ; No Global Signal assignments found.                                      ; I/O                 ;                   ;
-; Inapplicable ; IO_000003 ; Capacity Checks                   ; Number of pins in a Vrefgroup should not exceed the number of locations available.                   ; Critical ; No Location assignments found.                                           ; I/O                 ;                   ;
+; Pass         ; IO_000003 ; Capacity Checks                   ; Number of pins in a Vrefgroup should not exceed the number of locations available.                   ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
 ; Inapplicable ; IO_000004 ; Voltage Compatibility Checks      ; The I/O bank should support the requested VCCIO.                                                     ; Critical ; No IOBANK_VCCIO assignments found.                                       ; I/O                 ;                   ;
 ; Inapplicable ; IO_000005 ; Voltage Compatibility Checks      ; The I/O bank should not have competing VREF values.                                                  ; Critical ; No VREF I/O Standard assignments found.                                  ; I/O                 ;                   ;
 ; Pass         ; IO_000006 ; Voltage Compatibility Checks      ; The I/O bank should not have competing VCCIO values.                                                 ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
-; Inapplicable ; IO_000007 ; Valid Location Checks             ; Checks for unavailable locations.                                                                    ; Critical ; No Location assignments found.                                           ; I/O                 ;                   ;
+; Pass         ; IO_000007 ; Valid Location Checks             ; Checks for unavailable locations.                                                                    ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
 ; Inapplicable ; IO_000008 ; Valid Location Checks             ; Checks for reserved locations.                                                                       ; Critical ; No reserved LogicLock region found.                                      ; I/O                 ;                   ;
 ; Pass         ; IO_000009 ; I/O Properties Checks for One I/O ; The location should support the requested I/O standard.                                              ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
 ; Pass         ; IO_000010 ; I/O Properties Checks for One I/O ; The location should support the requested I/O direction.                                             ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
@@ -1517,42 +1557,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 32        ; 0            ; 0            ; 32        ; 32        ; 0            ; 7            ; 0            ; 0            ; 25           ; 0            ; 7            ; 25           ; 0            ; 0            ; 0            ; 7            ; 0            ; 0            ; 0            ; 0            ; 0            ; 32        ; 0            ; 0            ;
+; Total Pass         ; 19           ; 0            ; 19           ; 0            ; 0            ; 32        ; 19           ; 0            ; 32        ; 32        ; 0            ; 7            ; 0            ; 0            ; 25           ; 0            ; 7            ; 25           ; 0            ; 0            ; 0            ; 7            ; 0            ; 0            ; 0            ; 0            ; 0            ; 32        ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 32           ; 32           ; 32           ; 32           ; 32           ; 0         ; 32           ; 32           ; 0         ; 0         ; 32           ; 25           ; 32           ; 32           ; 7            ; 32           ; 25           ; 7            ; 32           ; 32           ; 32           ; 25           ; 32           ; 32           ; 32           ; 32           ; 32           ; 0         ; 32           ; 32           ;
+; Total Inapplicable ; 13           ; 32           ; 13           ; 32           ; 32           ; 0         ; 13           ; 32           ; 0         ; 0         ; 32           ; 25           ; 32           ; 32           ; 7            ; 32           ; 25           ; 7            ; 32           ; 32           ; 32           ; 25           ; 32           ; 32           ; 32           ; 32           ; 32           ; 0         ; 32           ; 32           ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; DACDAT[0]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[1]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[2]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[3]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[4]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[5]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[6]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[7]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[8]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[9]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[10]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[11]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[12]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[13]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[14]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[15]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[16]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[17]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[18]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[19]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[20]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[21]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[22]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DACDAT[23]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; c32                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[0]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[1]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[2]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[3]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[4]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[5]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[6]          ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[7]          ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[8]          ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[9]          ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[10]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[11]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[12]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[13]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[14]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[15]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[16]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[17]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[18]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[19]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[20]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[21]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[22]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DAdata[23]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; BCLK               ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; c64                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; int[0]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; int[1]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; int[2]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; int[3]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; int[4]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; CPUCLK             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; CPUCLK             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -1592,13 +1632,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary              ;
-+-----------------+----------------------+-------------------+
-; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
-+-----------------+----------------------+-------------------+
-; CPUCLK          ; CPUCLK               ; 6.2               ;
-+-----------------+----------------------+-------------------+
++-----------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                               ;
++----------------------------+----------------------------+-------------------+
+; Source Clock(s)            ; Destination Clock(s)       ; Delay Added in ns ;
++----------------------------+----------------------------+-------------------+
+; ClockDivider32:CLKD1|inst4 ; ClockDivider32:CLKD1|inst4 ; 2.8               ;
+; CPUCLK                     ; CPUCLK                     ; 1.4               ;
++----------------------------+----------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
@@ -1608,14 +1649,14 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------+----------------------------+-------------------+
 ; Source Register            ; Destination Register       ; Delay Added in ns ;
 +----------------------------+----------------------------+-------------------+
-; ClockDivider64:CLKD2|inst  ; ClockDivider64:CLKD2|inst  ; 3.078             ;
-; ClockDivider32:CLKD1|inst  ; ClockDivider32:CLKD1|inst  ; 3.078             ;
+; ClockDivider32:CLKD2|inst  ; ClockDivider32:CLKD2|inst  ; 2.772             ;
+; ClockDivider32:CLKD1|inst  ; ClockDivider32:CLKD1|inst  ; 1.423             ;
+; ClockDivider32:CLKD2|inst2 ; ClockDivider32:CLKD2|inst2 ; 0.818             ;
+; ClockDivider32:CLKD2|inst3 ; ClockDivider32:CLKD2|inst3 ; 0.770             ;
 ; ClockDivider32:CLKD1|inst2 ; ClockDivider32:CLKD1|inst2 ; 0.731             ;
-; ClockDivider64:CLKD2|inst2 ; ClockDivider64:CLKD2|inst2 ; 0.691             ;
 ; ClockDivider32:CLKD1|inst3 ; ClockDivider32:CLKD1|inst3 ; 0.691             ;
-; ClockDivider64:CLKD2|inst4 ; ClockDivider64:CLKD2|inst4 ; 0.676             ;
-; ClockDivider64:CLKD2|inst1 ; ClockDivider64:CLKD2|inst1 ; 0.554             ;
-; ClockDivider64:CLKD2|inst3 ; ClockDivider64:CLKD2|inst3 ; 0.554             ;
+; ClockDivider32:CLKD1|inst4 ; ClockDivider32:CLKD1|inst4 ; 0.571             ;
+; ClockDivider32:CLKD2|inst1 ; ClockDivider32:CLKD2|inst1 ; 0.554             ;
 ; ClockDivider32:CLKD1|inst1 ; ClockDivider32:CLKD1|inst1 ; 0.554             ;
 +----------------------------+----------------------------+-------------------+
 Note: This table only shows the top 9 path(s) that have the largest delay added for hold.
@@ -1647,70 +1688,62 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
     Info (169125): Pin ~ALTERA_DATA0~ is reserved at location N7
     Info (169125): Pin ~ALTERA_nCEO~ is reserved at location P28
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
-Critical Warning (169085): No exact pin location assignment(s) for 32 pins of 32 total pins. For the list of the pins please refer to the Input Pins, Output Pins, and Bidir Pins tables in the Fitter report and look for the user pins whose location is assigned by Fitter.
+Critical Warning (169085): No exact pin location assignment(s) for 13 pins of 32 total pins. For the list of the pins please refer to the Input Pins, Output Pins, and Bidir Pins tables in the Fitter report and look for the user pins whose location is assigned by Fitter.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'CODECSystem.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "Add0~6|dataa"
-    Warning (332126): Node "Add0~6|combout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "Add0~4|dataa"
-    Warning (332126): Node "Add0~4|combout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "Add0~2|dataa"
-    Warning (332126): Node "Add0~2|combout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "Add0~0|datab"
-    Warning (332126): Node "Add0~0|combout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "int[0]~5|combout"
-    Warning (332126): Node "int[0]~5|dataa"
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node CPUCLK~input (placed in PIN J1 (CLK1, DIFFCLK_0n))
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
+Info (176353): Automatically promoted node ClockDivider32:CLKD1|inst4 
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node ClockDivider32:CLKD1|inst4~0
+        Info (176357): Destination node BCLK~output
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 31 (unused VREF, 2.5V VCCIO, 24 input, 7 output, 0 bidirectional)
+    Info (176211): Number of I/O pins in group: 13 (unused VREF, 2.5V VCCIO, 6 input, 7 output, 0 bidirectional)
         Info (176212): I/O standards used: 2.5 V.
 Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
-        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 5 total pin(s) used --  51 pins available
-        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  63 pins available
+        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  52 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  62 pins available
         Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  73 pins available
         Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
-        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  65 pins available
+        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 18 total pin(s) used --  47 pins available
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  57 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  72 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
+Warning (15705): Ignored locations or region assignments to the following nodes
+    Warning (15706): Node "DACCLK" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "DACDAT" is assigned to location or region, but does not exist in design
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X34_Y49 to location X45_Y60
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X58_Y61 to location X68_Y73
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.23 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.25 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Helder/Documents/PI-VI/FPGAProgram/output_files/CODECSystem.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 1667 megabytes
-    Info: Processing ended: Wed Aug 26 19:48:06 2015
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:38
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 1670 megabytes
+    Info: Processing ended: Fri Aug 28 20:04:56 2015
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:33
 
 
 +----------------------------+

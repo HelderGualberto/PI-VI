@@ -2,21 +2,23 @@
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 Entity CODECSystem IS
 	port(
-		DACDAT: in BIT_VECTOR(23 downto 0);
+		DAdata: in BIT_VECTOR(15 downto 0);
 		CPUCLK: in bit;
-		c32 : out bit;
+		BCLK : out bit;
 		c64 : out bit;
-		int : out integer range 0 to 23
+		int : out integer range 0 to 15
 	);
 END CODECSystem;
 
 ARCHITECTURE CODECarch of CODECSystem is
-	
-	signal BCLK : bit;
+	signal data : bit_vector(15 downto 0):="0000000000000001";
+	signal c32 : bit;
 	signal DACLK : bit;
+	signal i : integer range 0 to 15 :=0;
 	
 	COMPONENT ClockDivider32 is
 		port(
@@ -44,18 +46,31 @@ ARCHITECTURE CODECarch of CODECSystem is
 	
 	begin
 		
-		CLKD1 : ClockDivider32 port map('1',CPUCLK,BCLK);
-		CLKD2 : ClockDivider64 port map('1',CPUCLK,DACLK);
+		CLKD1 : ClockDivider32 port map('1',CPUCLK,c32);
+		CLKD2 : ClockDivider32 port map('1',c32,DACLK);
 		
-		process(BCLK)
-			variable i : integer range 0 to 23;
-			begin
-			i:=i+1;
-			int <= i;
+		process(CPUCLK)
+		begin
+			if (CPUCLK'EVENT and CPUCLK = '1') then
+				data <= data+1;
+			end if;
 		end process;
 		
-		--DA : DASystem port map(DACDAT(i),DACLK); 
-		c32 <= BCLK;
+		process(c32)
+			begin
+			if (c32'EVENT and c32 = '1') then				
+				if i = 16 then
+					i<=0;
+					int <= i;
+				else
+					i<=i+1;
+					int <= i;
+				end if;
+			end if;
+		end process;
+		
+		DA : DASystem port map(data(i),DACLK); 
+		BCLK <= c32;
 		c64 <= DACLK;
 		
 		
