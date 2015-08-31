@@ -1,0 +1,6 @@
+--Codec system configuration i2c
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY 
