@@ -52,7 +52,7 @@ ARCHITECTURE CODECarch of CODECSystem is
 		process(CPUCLK)
 		begin
 			if (CPUCLK'EVENT and CPUCLK = '1') then
-				data <= data+1;
+				--data <= data + '1';
 			end if;
 		end process;
 		

@@ -2,51 +2,24 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
-# -- Compiling module CODECSystem
+# -- Compiling module CodecConfig
 # 
 # Top level modules:
-# 	CODECSystem
+# 	CodecConfig
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
-# -- Compiling module CODECSystem_vlg_sample_tst
-# -- Compiling module CODECSystem_vlg_check_tst
-# -- Compiling module CODECSystem_vlg_vec_tst
+# -- Compiling module CodecConfig_vlg_sample_tst
+# -- Compiling module CodecConfig_vlg_check_tst
+# -- Compiling module CodecConfig_vlg_vec_tst
 # 
 # Top level modules:
-# 	CODECSystem_vlg_vec_tst
-# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.CODECSystem_vlg_vec_tst 
-# Loading work.CODECSystem_vlg_vec_tst
-# Loading work.CODECSystem
+# 	CodecConfig_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.CodecConfig_vlg_vec_tst 
+# Loading work.CodecConfig_vlg_vec_tst
+# Loading work.CodecConfig
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
-# Loading cycloneive_ver.cycloneive_lcell_comb
-# Loading altera_ver.dffeas
-# Loading cycloneive_ver.cycloneive_clkctrl
-# Loading cycloneive_ver.cycloneive_mux41
-# Loading cycloneive_ver.cycloneive_ena_reg
-# Loading work.CODECSystem_vlg_sample_tst
-# Loading work.CODECSystem_vlg_check_tst
-# Loading altera_ver.PRIM_GDFF_LOW
-# ERROR! Vector Mismatch for output port c64 :: @time = 1000000.000 ps
-#      Expected value = 0
-#      Real value = 1
-# ERROR! Vector Mismatch for output port int[0] :: @time = 1000000.000 ps
-#      Expected value = 00000
-#      Real value = 00001
-# ERROR! Vector Mismatch for output port c32 :: @time = 1300000.000 ps
-#      Expected value = 0
-#      Real value = 1
-# ERROR! Vector Mismatch for output port int[1] :: @time = 1300000.000 ps
-#      Expected value = 00000
-#      Real value = 00010
-# ERROR! Vector Mismatch for output port int[2] :: @time = 2580000.000 ps
-#      Expected value = 00000
-#      Real value = 00100
-# ERROR! Vector Mismatch for output port int[3] :: @time = 5140000.000 ps
-#      Expected value = 00000
-#      Real value = 01000
-# ERROR! Vector Mismatch for output port int[4] :: @time = 10260000.000 ps
-#      Expected value = 00000
-#      Real value = 10000
-#           7 mismatched vectors : Simulation failed !
-# ** Note: $finish    : quebraclock.vwf.vt(283)
-#    Time: 50 us  Iteration: 0  Instance: /CODECSystem_vlg_vec_tst/tb_out
+# Loading work.CodecConfig_vlg_sample_tst
+# Loading work.CodecConfig_vlg_check_tst
+# Simulation passed !
+# ** Note: $finish    : Waveform.vwf.vt(176)
+#    Time: 1 us  Iteration: 0  Instance: /CodecConfig_vlg_vec_tst/tb_out
