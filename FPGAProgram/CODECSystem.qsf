@@ -61,6 +61,7 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE CODECSimulation.vwf
 set_global_assignment -name BDF_FILE ClockDivider64.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE quebraclock.vwf
 set_location_assignment PIN_D1 -to DACDAT
+<<<<<<< Updated upstream
 set_location_assignment PIN_E3 -to DACCLK
 set_location_assignment PIN_Y2 -to CPUCLK
 set_location_assignment PIN_AB28 -to DAdata[23]
@@ -87,3 +88,43 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+=======
+set_location_assignment PIN_Y23 -to DACCLK
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_Y23 -to DAdata[15]
+set_location_assignment PIN_Y24 -to DAdata[14]
+set_location_assignment PIN_AA22 -to DAdata[13]
+set_location_assignment PIN_AA23 -to DAdata[12]
+set_location_assignment PIN_AA24 -to DAdata[11]
+set_location_assignment PIN_AB23 -to DAdata[10]
+set_location_assignment PIN_AB24 -to DAdata[9]
+set_location_assignment PIN_AC24 -to DAdata[8]
+set_location_assignment PIN_AB25 -to DAdata[7]
+set_location_assignment PIN_AC25 -to DAdata[6]
+set_location_assignment PIN_AB26 -to DAdata[5]
+set_location_assignment PIN_AD26 -to DAdata[4]
+set_location_assignment PIN_AC26 -to DAdata[3]
+set_location_assignment PIN_AB27 -to DAdata[2]
+set_location_assignment PIN_AD27 -to DAdata[1]
+set_location_assignment PIN_AC27 -to DAdata[0]
+set_location_assignment PIN_H15 -to led[15]
+set_location_assignment PIN_G16 -to led[14]
+set_location_assignment PIN_G15 -to led[13]
+set_location_assignment PIN_F15 -to led[12]
+set_location_assignment PIN_H17 -to led[11]
+set_location_assignment PIN_J16 -to led[10]
+set_location_assignment PIN_H16 -to led[9]
+set_location_assignment PIN_J15 -to led[8]
+set_location_assignment PIN_G17 -to led[7]
+set_location_assignment PIN_J17 -to led[6]
+set_location_assignment PIN_H19 -to led[5]
+set_location_assignment PIN_J19 -to led[4]
+set_location_assignment PIN_E18 -to led[3]
+set_location_assignment PIN_F18 -to led[2]
+set_location_assignment PIN_F21 -to led[1]
+set_location_assignment PIN_E19 -to led[0]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform.vwf
+>>>>>>> Stashed changes

@@ -3,6 +3,7 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\Helder\Documents\PI-VI\FPGAProgram\simulation\qsim
+<<<<<<< Updated upstream
 vCodecConfig
 Z1 !s100 m6YE0KjKaAV^Kl::1bJJf1
 Z2 I=[Km@feBkL?GP@5>SFX;92
@@ -11,6 +12,15 @@ Z4 dC:\Users\Helder\Documents\GitHub\PI-VI\FPGAProgram\simulation\qsim
 Z5 w1441210474
 Z6 8CODECSystem.vo
 Z7 FCODECSystem.vo
+=======
+vCODECSystem
+Z1 IaQOl3oCM_MGbQg3J`e:L>0
+Z2 Vc0L@Nzn?IDUR2^@<ZDHdJ0
+Z3 dC:\Users\Helder\Documents\GitHub\PI-VI\FPGAProgram\simulation\qsim
+Z4 w1441031421
+Z5 8CODECSystem.vo
+Z6 FCODECSystem.vo
+>>>>>>> Stashed changes
 L0 32
 Z8 OV;L;10.1e;51
 r1
@@ -19,12 +29,19 @@ Z9 !s90 -work|work|CODECSystem.vo|
 Z10 o-work work -O0
 Z11 n@codec@config
 !i10b 1
+<<<<<<< Updated upstream
 !s85 0
 Z12 !s108 1441210475.690000
+=======
+Z11 !s100 ]6S`38EOJ;=<EY=489]Q42
+!s85 0
+Z12 !s108 1441031424.130000
+>>>>>>> Stashed changes
 Z13 !s107 CODECSystem.vo|
 !s101 -O0
 vCodecConfig_vlg_check_tst
 !i10b 1
+<<<<<<< Updated upstream
 Z14 !s100 ef79RQi6c@OfYNgT3GH1h3
 Z15 IBMLVa8<CFQDRUm2@Z9gmM0
 Z16 Vl[f7]aVWKNBdeDBcM]zdO3
@@ -52,15 +69,45 @@ R4
 R17
 R18
 R19
+=======
+!s100 e82mEf@Di^P0Slb_40Y?I2
+I>R?P0_f:WmzFc0C7Q;MO20
+VJ?zZHz>A3D5T;bBhLhJ690
+R3
+Z14 w1441031419
+Z15 8Waveform.vwf.vt
+Z16 FWaveform.vwf.vt
+L0 60
+R7
+r1
+!s85 0
+31
+Z17 !s108 1441031424.480000
+Z18 !s107 Waveform.vwf.vt|
+Z19 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R9
+Z20 n@c@o@d@e@c@system_vlg_check_tst
+vCODECSystem_vlg_sample_tst
+!i10b 1
+!s100 ME^gBkRTEW_gn@6DF@o8?3
+I2UcD^M`Bi3lP7mUdiO^h]0
+V3^n7zXM>P==HCdJd5Mm5E3
+R3
+R14
+R15
+R16
+>>>>>>> Stashed changes
 L0 30
 R8
 r1
 !s85 0
 31
-R20
-R21
-R22
+R17
+R18
+R19
 !s101 -O0
+<<<<<<< Updated upstream
 R10
 Z27 n@codec@config_vlg_sample_tst
 vCodecConfig_vlg_vec_tst
@@ -74,12 +121,27 @@ R18
 R19
 Z31 L0 180
 R8
+=======
+R9
+Z21 n@c@o@d@e@c@system_vlg_sample_tst
+vCODECSystem_vlg_vec_tst
+!i10b 1
+!s100 K@5LS95EzVa=O63Cdj>6d2
+I7P<hWZmgT8c]_j=XlcFIO1
+Z22 VGXQ<?LgaUo>2<LWoE1Wf03
+R3
+R14
+R15
+R16
+L0 580
+R7
+>>>>>>> Stashed changes
 r1
 !s85 0
 31
-R20
-R21
-R22
+R17
+R18
+R19
 !s101 -O0
 R10
 Z32 n@codec@config_vlg_vec_tst
@@ -95,6 +157,7 @@ R8
 r1
 31
 R9
+<<<<<<< Updated upstream
 R10
 Z37 n@c@o@d@e@c@system
 Z38 !s100 <RafeB=jVAB_3C4o^Wd640
@@ -169,6 +232,16 @@ Z60 I>?h`Sa<jfF`^DPNX@;e3M2
 Z61 V=7nJab3iL8lRKC9:Cf]c_2
 R35
 Z62 w1440621637
+=======
+Z23 n@c@o@d@e@c@system_vlg_vec_tst
+vFFD
+Z24 !s100 JBYjoEbMC<^dfU@AQZlTg1
+Z25 I>?h`Sa<jfF`^DPNX@;e3M2
+Z26 V=7nJab3iL8lRKC9:Cf]c_2
+Z27 dC:\Users\Helder\Documents\PI-VI\FPGAProgram\simulation\qsim
+Z28 w1440621637
+R5
+>>>>>>> Stashed changes
 R6
 R7
 L0 32
@@ -176,14 +249,20 @@ R8
 r1
 31
 R9
+<<<<<<< Updated upstream
 R10
 Z63 n@f@f@d
 Z64 !s108 1440621639.980000
+=======
+Z29 n@f@f@d
+Z30 !s108 1440621639.980000
+>>>>>>> Stashed changes
 R13
 !i10b 1
 !s85 0
 !s101 -O0
 vFFD_vlg_check_tst
+<<<<<<< Updated upstream
 Z65 !s100 2P>1fnJFicAM[9ZAWB6aC0
 Z66 Ie6S7=aF6g?V<5z=L1Q_`Z3
 Z67 VKU1nmEa`kC4_z4EFUzYL11
@@ -191,19 +270,37 @@ R35
 Z68 w1440621636
 R44
 R45
+=======
+Z31 !s100 2P>1fnJFicAM[9ZAWB6aC0
+Z32 Ie6S7=aF6g?V<5z=L1Q_`Z3
+Z33 VKU1nmEa`kC4_z4EFUzYL11
+R27
+Z34 w1440621636
+Z35 8quebraclock.vwf.vt
+Z36 Fquebraclock.vwf.vt
+>>>>>>> Stashed changes
 L0 62
 R8
 r1
 31
+<<<<<<< Updated upstream
 Z69 !s108 1440621640.335000
 R47
 R48
 R10
 Z70 n@f@f@d_vlg_check_tst
+=======
+Z37 !s108 1440621640.335000
+Z38 !s107 quebraclock.vwf.vt|
+Z39 !s90 -work|work|quebraclock.vwf.vt|
+R9
+Z40 n@f@f@d_vlg_check_tst
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFD_vlg_sample_tst
+<<<<<<< Updated upstream
 Z71 !s100 o<]]QHgP^Z5diOCiR<g7Z2
 Z72 I>B4Zeh;W>i8]RKH^XCc5l3
 Z73 V9S^g]DJ4z9:MiKeFTa^H=0
@@ -211,19 +308,37 @@ R35
 R68
 R44
 R45
+=======
+Z41 !s100 o<]]QHgP^Z5diOCiR<g7Z2
+Z42 I>B4Zeh;W>i8]RKH^XCc5l3
+Z43 V9S^g]DJ4z9:MiKeFTa^H=0
+R27
+R34
+R35
+R36
+>>>>>>> Stashed changes
 L0 30
 R8
 r1
 31
+<<<<<<< Updated upstream
 R69
 R47
 R48
 R10
 Z74 n@f@f@d_vlg_sample_tst
+=======
+R37
+R38
+R39
+R9
+Z44 n@f@f@d_vlg_sample_tst
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFD_vlg_vec_tst
+<<<<<<< Updated upstream
 Z75 In:G3nZz>nTEHPk93G1W<80
 Z76 V0TkYclT>mLDlN^R`<9YGX2
 R35
@@ -240,14 +355,40 @@ R48
 R10
 Z78 n@f@f@d_vlg_vec_tst
 Z79 !s100 I9ULS38GGgX2z0JeDnLjH0
+=======
+Z45 In:G3nZz>nTEHPk93G1W<80
+Z46 V0TkYclT>mLDlN^R`<9YGX2
+R27
+R34
+R35
+R36
+Z47 L0 158
+R7
+r1
+31
+R37
+R38
+R39
+R9
+Z48 n@f@f@d_vlg_vec_tst
+Z49 !s100 I9ULS38GGgX2z0JeDnLjH0
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFT
+<<<<<<< Updated upstream
 Z80 I7`kG`g>1dzT6ETjPAYD`K1
 Z81 VWBLH6mk1@O5lNiHnodIEI2
 R35
 Z82 w1440623048
+=======
+Z50 I7`kG`g>1dzT6ETjPAYD`K1
+Z51 VWBLH6mk1@O5lNiHnodIEI2
+R27
+Z52 w1440623048
+R5
+>>>>>>> Stashed changes
 R6
 R7
 L0 32
@@ -255,55 +396,98 @@ R8
 r1
 31
 R9
+<<<<<<< Updated upstream
 R10
 Z83 n@f@f@t
 Z84 !s100 kZHeeJZHAAbFW_cbjX9Yb2
 Z85 !s108 1440623050.579000
+=======
+Z53 n@f@f@t
+Z54 !s100 kZHeeJZHAAbFW_cbjX9Yb2
+Z55 !s108 1440623050.579000
+>>>>>>> Stashed changes
 R13
 !i10b 1
 !s85 0
 !s101 -O0
 vFFT_vlg_check_tst
+<<<<<<< Updated upstream
 Z86 IcEEYWieh5VZeTQL^dz0b:3
 Z87 Vo]XhGM[oN[zm0SVkZ>Q`o1
 R35
 Z88 w1440623046
 R44
 R45
+=======
+Z56 IcEEYWieh5VZeTQL^dz0b:3
+Z57 Vo]XhGM[oN[zm0SVkZ>Q`o1
+R27
+Z58 w1440623046
+R35
+R36
+>>>>>>> Stashed changes
 L0 60
 R8
 r1
 31
+<<<<<<< Updated upstream
 Z89 !s108 1440623050.959000
 R47
 R48
 R10
 Z90 n@f@f@t_vlg_check_tst
 Z91 !s100 h0F7id8gQ8BoLcEDh<h2C3
+=======
+Z59 !s108 1440623050.959000
+R38
+R39
+R9
+Z60 n@f@f@t_vlg_check_tst
+Z61 !s100 h0F7id8gQ8BoLcEDh<h2C3
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFT_vlg_sample_tst
+<<<<<<< Updated upstream
 Z92 I7AnXBiZ;HKLeehF]OINd[1
 Z93 VmkmM=1QGoV=<6N8]@dWlm0
 R35
 R88
 R44
 R45
+=======
+Z62 I7AnXBiZ;HKLeehF]OINd[1
+Z63 VmkmM=1QGoV=<6N8]@dWlm0
+R27
+R58
+R35
+R36
+>>>>>>> Stashed changes
 L0 30
 R8
 r1
 31
+<<<<<<< Updated upstream
 R89
 R47
 R48
 R10
 Z94 n@f@f@t_vlg_sample_tst
 Z95 !s100 YLQZgzGKlj5G_BGk=GZmF2
+=======
+R59
+R38
+R39
+R9
+Z64 n@f@f@t_vlg_sample_tst
+Z65 !s100 YLQZgzGKlj5G_BGk=GZmF2
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFT_vlg_vec_tst
+<<<<<<< Updated upstream
 Z96 IIbI]ACFbR<1@DGmPY;UVV0
 Z97 VL>17oEhg[O^JDdLiTGd3j2
 R35
@@ -320,14 +504,40 @@ R48
 R10
 Z99 n@f@f@t_vlg_vec_tst
 Z100 !s100 ;Ch@YU4hRdM@H<TQn^QLi3
+=======
+Z66 IIbI]ACFbR<1@DGmPY;UVV0
+Z67 VL>17oEhg[O^JDdLiTGd3j2
+R27
+R58
+R35
+R36
+Z68 L0 155
+R7
+r1
+31
+R59
+R38
+R39
+R9
+Z69 n@f@f@t_vlg_vec_tst
+Z70 !s100 ;Ch@YU4hRdM@H<TQn^QLi3
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFTDivider32
+<<<<<<< Updated upstream
 Z101 IaRTVbWo`:U:IDaAL]E6de0
 Z102 VlUNOSbX;G_n`iYC1MX?9^3
 R35
 Z103 w1440623482
+=======
+Z71 IaRTVbWo`:U:IDaAL]E6de0
+Z72 VlUNOSbX;G_n`iYC1MX?9^3
+R27
+Z73 w1440623482
+R5
+>>>>>>> Stashed changes
 R6
 R7
 L0 32
@@ -335,55 +545,98 @@ R8
 r1
 31
 R9
+<<<<<<< Updated upstream
 R10
 Z104 n@f@f@t@divider32
 Z105 !s100 :I1W94hQhoFoSD@_<5V1_0
 Z106 !s108 1440623484.509000
+=======
+Z74 n@f@f@t@divider32
+Z75 !s100 :I1W94hQhoFoSD@_<5V1_0
+Z76 !s108 1440623484.509000
+>>>>>>> Stashed changes
 R13
 !i10b 1
 !s85 0
 !s101 -O0
 vFFTDivider32_vlg_check_tst
+<<<<<<< Updated upstream
 Z107 IeK>I_SZIchbF<>Y0=_HoY0
 Z108 V6bkA56TVQ46SJ0XK76iML1
 R35
 Z109 w1440623480
 R44
 R45
+=======
+Z77 IeK>I_SZIchbF<>Y0=_HoY0
+Z78 V6bkA56TVQ46SJ0XK76iML1
+R27
+Z79 w1440623480
+R35
+R36
+>>>>>>> Stashed changes
 L0 60
 R8
 r1
 31
+<<<<<<< Updated upstream
 Z110 !s108 1440623484.899000
 R47
 R48
 R10
 Z111 n@f@f@t@divider32_vlg_check_tst
 Z112 !s100 Mc7U:@@=egZR86MEdEgio2
+=======
+Z80 !s108 1440623484.899000
+R38
+R39
+R9
+Z81 n@f@f@t@divider32_vlg_check_tst
+Z82 !s100 Mc7U:@@=egZR86MEdEgio2
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFTDivider32_vlg_sample_tst
+<<<<<<< Updated upstream
 Z113 IN9Ug@zO0ISPm0iZNmVKXH0
 Z114 VR@ZYBNWbj7PVY`dUJ[KfF1
 R35
 R109
 R44
 R45
+=======
+Z83 IN9Ug@zO0ISPm0iZNmVKXH0
+Z84 VR@ZYBNWbj7PVY`dUJ[KfF1
+R27
+R79
+R35
+R36
+>>>>>>> Stashed changes
 L0 30
 R8
 r1
 31
+<<<<<<< Updated upstream
 R110
 R47
 R48
 R10
 Z115 n@f@f@t@divider32_vlg_sample_tst
 Z116 !s100 LUnBTF6W`KUjP>]Y0Z0<N3
+=======
+R80
+R38
+R39
+R9
+Z85 n@f@f@t@divider32_vlg_sample_tst
+Z86 !s100 LUnBTF6W`KUjP>]Y0Z0<N3
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0
 vFFTDivider32_vlg_vec_tst
+<<<<<<< Updated upstream
 Z117 IdhoU`a^UgYB[eQ_4bFAOX0
 Z118 V1J<Q_G?5XG@cE26jeBggV3
 R35
@@ -400,6 +653,24 @@ R48
 R10
 Z119 n@f@f@t@divider32_vlg_vec_tst
 Z120 !s100 KKD?<S=WNgYo=zUTRHOhk2
+=======
+Z87 IdhoU`a^UgYB[eQ_4bFAOX0
+Z88 V1J<Q_G?5XG@cE26jeBggV3
+R27
+R79
+R35
+R36
+R68
+R7
+r1
+31
+R80
+R38
+R39
+R9
+Z89 n@f@f@t@divider32_vlg_vec_tst
+Z90 !s100 KKD?<S=WNgYo=zUTRHOhk2
+>>>>>>> Stashed changes
 !i10b 1
 !s85 0
 !s101 -O0

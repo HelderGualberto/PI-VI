@@ -1,6 +1,90 @@
+<<<<<<< Updated upstream
 |CodecConfig
 SCLK => ~NO_FANOUT~
 SCLKHELP <= <GND>
 SCINHELP <= <GND>
+=======
+|CODECSystem
+DAdata[0] => Mux0.IN15
+DAdata[0] => Mux1.IN15
+DAdata[1] => Mux0.IN14
+DAdata[1] => Mux1.IN14
+DAdata[2] => Mux0.IN13
+DAdata[2] => Mux1.IN13
+DAdata[3] => Mux0.IN12
+DAdata[3] => Mux1.IN12
+DAdata[4] => Mux0.IN11
+DAdata[4] => Mux1.IN11
+DAdata[5] => Mux0.IN10
+DAdata[5] => Mux1.IN10
+DAdata[6] => Mux0.IN9
+DAdata[6] => Mux1.IN9
+DAdata[7] => Mux0.IN8
+DAdata[7] => Mux1.IN8
+DAdata[8] => Mux0.IN7
+DAdata[8] => Mux1.IN7
+DAdata[9] => Mux0.IN6
+DAdata[9] => Mux1.IN6
+DAdata[10] => Mux0.IN5
+DAdata[10] => Mux1.IN5
+DAdata[11] => Mux0.IN4
+DAdata[11] => Mux1.IN4
+DAdata[12] => Mux0.IN3
+DAdata[12] => Mux1.IN3
+DAdata[13] => Mux0.IN2
+DAdata[13] => Mux1.IN2
+DAdata[14] => Mux0.IN1
+DAdata[14] => Mux1.IN1
+DAdata[15] => Mux0.IN0
+DAdata[15] => Mux1.IN0
+CPUCLK => ClockDivider32:CLKD1.CLK
+BCLK <= ClockDivider32:CLKD1.CLKout
+c64 <= ClockDivider32:CLKD2.CLKout
+led[0] <= led[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= led[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= led[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= led[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= led[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= led[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= led[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= led[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[8] <= led[8]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[9] <= led[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[10] <= led[10]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[11] <= led[11]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[12] <= led[12]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[13] <= led[13]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[14] <= led[14]$latch.DB_MAX_OUTPUT_PORT_TYPE
+led[15] <= led[15]$latch.DB_MAX_OUTPUT_PORT_TYPE
+int[0] <= i[0].DB_MAX_OUTPUT_PORT_TYPE
+int[1] <= i[1].DB_MAX_OUTPUT_PORT_TYPE
+int[2] <= i[2].DB_MAX_OUTPUT_PORT_TYPE
+int[3] <= i[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CODECSystem|ClockDivider32:CLKD1
+CLKout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+T => inst4.IN0
+T => inst3.IN0
+T => inst2.IN0
+T => inst1.IN0
+T => inst.IN0
+CLK => inst.CLK
+
+
+|CODECSystem|ClockDivider32:CLKD2
+CLKout <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+T => inst4.IN0
+T => inst3.IN0
+T => inst2.IN0
+T => inst1.IN0
+T => inst.IN0
+CLK => inst.CLK
+
+
+|CODECSystem|DASystem:DA
+DACDAT => ~NO_FANOUT~
+DACCLK => ~NO_FANOUT~
+>>>>>>> Stashed changes
 
 

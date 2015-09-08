@@ -10,12 +10,12 @@ Entity CODECSystem IS
 		CPUCLK: in bit;
 		BCLK : out bit;
 		c64 : out bit;
+		led : out bit_vector(15 downto 0);
 		int : out integer range 0 to 15
 	);
 END CODECSystem;
 
 ARCHITECTURE CODECarch of CODECSystem is
-	signal data : bit_vector(15 downto 0):="0000000000000001";
 	signal c32 : bit;
 	signal DACLK : bit;
 	signal i : integer range 0 to 15 :=0;
@@ -49,6 +49,7 @@ ARCHITECTURE CODECarch of CODECSystem is
 		CLKD1 : ClockDivider32 port map('1',CPUCLK,c32);
 		CLKD2 : ClockDivider32 port map('1',c32,DACLK);
 		
+<<<<<<< Updated upstream
 		process(CPUCLK)
 		begin
 			if (CPUCLK'EVENT and CPUCLK = '1') then
@@ -56,20 +57,21 @@ ARCHITECTURE CODECarch of CODECSystem is
 			end if;
 		end process;
 		
+=======
+>>>>>>> Stashed changes
 		process(c32)
 			begin
 			if (c32'EVENT and c32 = '1') then				
 				if i = 16 then
 					i<=0;
-					int <= i;
 				else
 					i<=i+1;
-					int <= i;
 				end if;
 			end if;
 		end process;
-		
-		DA : DASystem port map(data(i),DACLK); 
+		int <= i;
+		led(i) <= DAdata(i);
+		DA : DASystem port map(DAdata(i),DACLK);
 		BCLK <= c32;
 		c64 <= DACLK;
 		
