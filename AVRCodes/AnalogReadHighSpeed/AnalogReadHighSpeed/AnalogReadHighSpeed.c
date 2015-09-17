@@ -12,6 +12,7 @@
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
 int main(void)
 {
@@ -30,12 +31,17 @@ int main(void)
 	
     while(1)
     {
-		/*if(ADCH > 100)
-			PORTB = 0b100000;
-		else
-			PORTB = 0b000000;
-		*/
-		PORTB = ADCH;
+		ADCSRA |= (1 << ADSC);
+		sei();
+		ADCSRA |= (1 << ADIE);
+		PORTB = SREG << 1;
+		/*
+		_delay_ms(100);
+		PORTB = ADIF;
+		ADCL;
+		_delay_ms(100);
+		ADCH;
+		ADCSRA = 1 << ADIF;
+		PORTB = (ADIF);*/
 	}
-
 }
