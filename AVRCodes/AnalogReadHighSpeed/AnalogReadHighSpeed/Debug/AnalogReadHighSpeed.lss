@@ -3,25 +3,23 @@ AnalogReadHighSpeed.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000000f0  00000000  00000000  00000054  2**1
+  0 .text         000000e2  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .comment      00000030  00000000  00000000  00000144  2**0
+  1 .comment      00000030  00000000  00000000  00000136  2**0
                   CONTENTS, READONLY
-  2 .debug_aranges 00000020  00000000  00000000  00000174  2**0
+  2 .debug_aranges 00000020  00000000  00000000  00000166  2**0
                   CONTENTS, READONLY, DEBUGGING
-  3 .debug_info   000000c0  00000000  00000000  00000194  2**0
+  3 .debug_info   0000009d  00000000  00000000  00000186  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_abbrev 0000008f  00000000  00000000  00000254  2**0
+  4 .debug_abbrev 00000062  00000000  00000000  00000223  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_line   000000dc  00000000  00000000  000002e3  2**0
+  5 .debug_line   000000d6  00000000  00000000  00000285  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_frame  00000024  00000000  00000000  000003c0  2**2
+  6 .debug_frame  00000024  00000000  00000000  0000035c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_str    00000154  00000000  00000000  000003e4  2**0
+  7 .debug_str    0000014e  00000000  00000000  00000380  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_loc    00000033  00000000  00000000  00000538  2**0
-                  CONTENTS, READONLY, DEBUGGING
-  9 .debug_ranges 00000010  00000000  00000000  0000056b  2**0
+  8 .debug_ranges 00000010  00000000  00000000  000004ce  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -62,7 +60,7 @@ Disassembly of section .text:
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
   74:	0e 94 40 00 	call	0x80	; 0x80 <main>
-  78:	0c 94 76 00 	jmp	0xec	; 0xec <_exit>
+  78:	0c 94 6f 00 	jmp	0xde	; 0xde <_exit>
 
 0000007c <__bad_interrupt>:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -73,8 +71,8 @@ Disassembly of section .text:
 
 int main(void)
 {
-	DDRD = 0b11111100;
-  80:	8c ef       	ldi	r24, 0xFC	; 252
+	DDRD = 0b11111111;
+  80:	8f ef       	ldi	r24, 0xFF	; 255
   82:	8a b9       	out	0x0a, r24	; 10
 	DDRB = 0b111111; // Set input or output
   84:	8f e3       	ldi	r24, 0x3F	; 63
@@ -89,22 +87,22 @@ int main(void)
   92:	80 81       	ld	r24, Z
   94:	87 60       	ori	r24, 0x07	; 7
   96:	80 83       	st	Z, r24
-	ADMUX |= (1 << ADLAR); // Set the left justified MSB, located in ADCH (8 - MSB) and ADCL (2 - LSB).
+	ADMUX |= (0 << ADLAR); // Set the right justified MSB, located in ADCL (8 - MSB) and ADCH (2 - LSB). ADCL need to be read before ADCH 
   98:	ac e7       	ldi	r26, 0x7C	; 124
   9a:	b0 e0       	ldi	r27, 0x00	; 0
   9c:	8c 91       	ld	r24, X
-  9e:	80 62       	ori	r24, 0x20	; 32
-  a0:	8c 93       	st	X, r24
+  9e:	8c 93       	st	X, r24
 	ADCSRA |= (1 << ADATE);
-  a2:	80 81       	ld	r24, Z
-  a4:	80 62       	ori	r24, 0x20	; 32
-  a6:	80 83       	st	Z, r24
+  a0:	80 81       	ld	r24, Z
+  a2:	80 62       	ori	r24, 0x20	; 32
+  a4:	80 83       	st	Z, r24
 	ADCSRB = (0 << ADTS0)|(0 << ADTS1)|(0 << ADTS2); // Set ADC to free running mode
-  a8:	10 92 7b 00 	sts	0x007B, r1
-	//ADMUX |= (1 << REFS0)|(0 << REFS1);// Set the Vref to Internal VCC
-	ADMUX |= (0 << REFS0)|(0 << REFS1); // set the Vref to external Vcc in AREF
-  ac:	8c 91       	ld	r24, X
+  a6:	10 92 7b 00 	sts	0x007B, r1
+	ADMUX |= (1 << REFS0)|(0 << REFS1);// Set the Vref to Internal VCC
+  aa:	8c 91       	ld	r24, X
+  ac:	80 64       	ori	r24, 0x40	; 64
   ae:	8c 93       	st	X, r24
+	//ADMUX |= (0 << REFS0)|(0 << REFS1); // set the Vref to external Vcc in AREF
 	ADMUX |= (0 << MUX3)|(0 << MUX2)|(0 << MUX1)|(0 << MUX0); // Select the analog channel (here A0) that will be used (A0 to A6)
   b0:	8c 91       	ld	r24, X
   b2:	8c 93       	st	X, r24
@@ -113,52 +111,47 @@ int main(void)
   b6:	80 64       	ori	r24, 0x40	; 64
   b8:	80 83       	st	Z, r24
 	UCSR0B = (0 << RXEN0)|(0 << TXEN0);
-  ba:	10 92 c1 00 	sts	0x00C1, r1
-	int8_t y = 2;
+  ba:	e1 ec       	ldi	r30, 0xC1	; 193
+  bc:	f0 e0       	ldi	r31, 0x00	; 0
+  be:	10 82       	st	Z, r1
+	
+	UCSR0B = (0 << TXEN0) | (0 << RXEN0);
+  c0:	10 82       	st	Z, r1
+	int8_t i = 0;
 	
 	
     while(1)
     {
 		ADCSRA |= (1 << ADSC);
-  be:	aa e7       	ldi	r26, 0x7A	; 122
-  c0:	b0 e0       	ldi	r27, 0x00	; 0
-		
-		PORTB = ADCH >> 2;
-  c2:	e9 e7       	ldi	r30, 0x79	; 121
+  c2:	ea e7       	ldi	r30, 0x7A	; 122
   c4:	f0 e0       	ldi	r31, 0x00	; 0
-		i = (ADCH & clear)*0b00000100 + ADCL;
+		
+		PORTD = ADCL;
   c6:	c8 e7       	ldi	r28, 0x78	; 120
   c8:	d0 e0       	ldi	r29, 0x00	; 0
-	int8_t y = 2;
+		PORTB = ADCH;
+  ca:	a9 e7       	ldi	r26, 0x79	; 121
+  cc:	b0 e0       	ldi	r27, 0x00	; 0
+	int8_t i = 0;
 	
 	
     while(1)
     {
 		ADCSRA |= (1 << ADSC);
-  ca:	8c 91       	ld	r24, X
-  cc:	80 64       	ori	r24, 0x40	; 64
-  ce:	8c 93       	st	X, r24
+  ce:	80 81       	ld	r24, Z
+  d0:	80 64       	ori	r24, 0x40	; 64
+  d2:	80 83       	st	Z, r24
 		
-		PORTB = ADCH >> 2;
-  d0:	80 81       	ld	r24, Z
-  d2:	86 95       	lsr	r24
-  d4:	86 95       	lsr	r24
-  d6:	85 b9       	out	0x05, r24	; 5
-		i = (ADCH & clear)*0b00000100 + ADCL;
-  d8:	80 81       	ld	r24, Z
-  da:	98 81       	ld	r25, Y
-  dc:	83 70       	andi	r24, 0x03	; 3
-  de:	88 0f       	add	r24, r24
-  e0:	88 0f       	add	r24, r24
-  e2:	89 0f       	add	r24, r25
-		PORTD = i << 4;
-  e4:	82 95       	swap	r24
-  e6:	80 7f       	andi	r24, 0xF0	; 240
-  e8:	8b b9       	out	0x0b, r24	; 11
-  ea:	ef cf       	rjmp	.-34     	; 0xca <main+0x4a>
+		PORTD = ADCL;
+  d4:	88 81       	ld	r24, Y
+  d6:	8b b9       	out	0x0b, r24	; 11
+		PORTB = ADCH;
+  d8:	8c 91       	ld	r24, X
+  da:	85 b9       	out	0x05, r24	; 5
+  dc:	f8 cf       	rjmp	.-16     	; 0xce <main+0x4e>
 
-000000ec <_exit>:
-  ec:	f8 94       	cli
+000000de <_exit>:
+  de:	f8 94       	cli
 
-000000ee <__stop_program>:
-  ee:	ff cf       	rjmp	.-2      	; 0xee <__stop_program>
+000000e0 <__stop_program>:
+  e0:	ff cf       	rjmp	.-2      	; 0xe0 <__stop_program>
