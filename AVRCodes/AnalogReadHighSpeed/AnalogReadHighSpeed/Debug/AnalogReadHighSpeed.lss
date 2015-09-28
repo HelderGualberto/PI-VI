@@ -3,23 +3,25 @@ AnalogReadHighSpeed.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000000e2  00000000  00000000  00000054  2**1
+  0 .text         00000112  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .comment      00000030  00000000  00000000  00000136  2**0
+  1 .comment      00000030  00000000  00000000  00000166  2**0
                   CONTENTS, READONLY
-  2 .debug_aranges 00000020  00000000  00000000  00000166  2**0
+  2 .debug_aranges 00000028  00000000  00000000  00000196  2**0
                   CONTENTS, READONLY, DEBUGGING
-  3 .debug_info   0000009d  00000000  00000000  00000186  2**0
+  3 .debug_info   0000009d  00000000  00000000  000001be  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_abbrev 00000062  00000000  00000000  00000223  2**0
+  4 .debug_abbrev 0000006b  00000000  00000000  0000025b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_line   000000d6  00000000  00000000  00000285  2**0
+  5 .debug_line   000000db  00000000  00000000  000002c6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_frame  00000024  00000000  00000000  0000035c  2**2
+  6 .debug_frame  00000050  00000000  00000000  000003a4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_str    0000014e  00000000  00000000  00000380  2**0
+  7 .debug_str    0000015a  00000000  00000000  000003f4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_ranges 00000010  00000000  00000000  000004ce  2**0
+  8 .debug_loc    00000056  00000000  00000000  0000054e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 00000018  00000000  00000000  000005a4  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -46,7 +48,7 @@ Disassembly of section .text:
   48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
   4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
   50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
-  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 40 00 	jmp	0x80	; 0x80 <__vector_21>
   58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
   5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
   60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
@@ -59,99 +61,120 @@ Disassembly of section .text:
   6e:	d8 e0       	ldi	r29, 0x08	; 8
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
-  74:	0e 94 40 00 	call	0x80	; 0x80 <main>
-  78:	0c 94 6f 00 	jmp	0xde	; 0xde <_exit>
+  74:	0e 94 5b 00 	call	0xb6	; 0xb6 <main>
+  78:	0c 94 87 00 	jmp	0x10e	; 0x10e <_exit>
 
 0000007c <__bad_interrupt>:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-00000080 <main>:
+00000080 <__vector_21>:
+#define CLR 0b00000011
+#include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+
+ISR(ADC_vect){
+  80:	1f 92       	push	r1
+  82:	0f 92       	push	r0
+  84:	0f b6       	in	r0, 0x3f	; 63
+  86:	0f 92       	push	r0
+  88:	11 24       	eor	r1, r1
+  8a:	8f 93       	push	r24
+  8c:	ef 93       	push	r30
+  8e:	ff 93       	push	r31
+	PORTD = ADCL;
+  90:	80 91 78 00 	lds	r24, 0x0078
+  94:	8b b9       	out	0x0b, r24	; 11
+	PORTB = ADCH;
+  96:	80 91 79 00 	lds	r24, 0x0079
+  9a:	85 b9       	out	0x05, r24	; 5
+	ADCSRA |= (1 << ADSC);
+  9c:	ea e7       	ldi	r30, 0x7A	; 122
+  9e:	f0 e0       	ldi	r31, 0x00	; 0
+  a0:	80 81       	ld	r24, Z
+  a2:	80 64       	ori	r24, 0x40	; 64
+  a4:	80 83       	st	Z, r24
+}
+  a6:	ff 91       	pop	r31
+  a8:	ef 91       	pop	r30
+  aa:	8f 91       	pop	r24
+  ac:	0f 90       	pop	r0
+  ae:	0f be       	out	0x3f, r0	; 63
+  b0:	0f 90       	pop	r0
+  b2:	1f 90       	pop	r1
+  b4:	18 95       	reti
+
+000000b6 <main>:
 
 int main(void)
 {
 	DDRD = 0b11111111;
-  80:	8f ef       	ldi	r24, 0xFF	; 255
-  82:	8a b9       	out	0x0a, r24	; 10
+  b6:	8f ef       	ldi	r24, 0xFF	; 255
+  b8:	8a b9       	out	0x0a, r24	; 10
 	DDRB = 0b111111; // Set input or output
-  84:	8f e3       	ldi	r24, 0x3F	; 63
-  86:	84 b9       	out	0x04, r24	; 4
+  ba:	8f e3       	ldi	r24, 0x3F	; 63
+  bc:	84 b9       	out	0x04, r24	; 4
 	ADCSRA |= (1 << ADEN); // Enable the ADC
-  88:	ea e7       	ldi	r30, 0x7A	; 122
-  8a:	f0 e0       	ldi	r31, 0x00	; 0
-  8c:	80 81       	ld	r24, Z
-  8e:	80 68       	ori	r24, 0x80	; 128
-  90:	80 83       	st	Z, r24
+  be:	ea e7       	ldi	r30, 0x7A	; 122
+  c0:	f0 e0       	ldi	r31, 0x00	; 0
+  c2:	80 81       	ld	r24, Z
+  c4:	80 68       	ori	r24, 0x80	; 128
+  c6:	80 83       	st	Z, r24
 	ADCSRA |= (1 << ADPS0)|(1 << ADPS1)|(1 << ADPS2); // Set ADC frequency to 125kHz
-  92:	80 81       	ld	r24, Z
-  94:	87 60       	ori	r24, 0x07	; 7
-  96:	80 83       	st	Z, r24
-	ADMUX |= (0 << ADLAR); // Set the right justified MSB, located in ADCL (8 - MSB) and ADCH (2 - LSB). ADCL need to be read before ADCH 
-  98:	ac e7       	ldi	r26, 0x7C	; 124
-  9a:	b0 e0       	ldi	r27, 0x00	; 0
-  9c:	8c 91       	ld	r24, X
-  9e:	8c 93       	st	X, r24
+  c8:	80 81       	ld	r24, Z
+  ca:	87 60       	ori	r24, 0x07	; 7
+  cc:	80 83       	st	Z, r24
 	ADCSRA |= (1 << ADATE);
-  a0:	80 81       	ld	r24, Z
-  a2:	80 62       	ori	r24, 0x20	; 32
-  a4:	80 83       	st	Z, r24
+  ce:	80 81       	ld	r24, Z
+  d0:	80 62       	ori	r24, 0x20	; 32
+  d2:	80 83       	st	Z, r24
 	ADCSRB = (0 << ADTS0)|(0 << ADTS1)|(0 << ADTS2); // Set ADC to free running mode
-  a6:	10 92 7b 00 	sts	0x007B, r1
+  d4:	10 92 7b 00 	sts	0x007B, r1
+	ADMUX |= (0 << ADLAR); // Set the right justified MSB, located in ADCL (8 - MSB) and ADCH (2 - LSB). ADCL need to be read before ADCH 
+  d8:	ac e7       	ldi	r26, 0x7C	; 124
+  da:	b0 e0       	ldi	r27, 0x00	; 0
+  dc:	8c 91       	ld	r24, X
+  de:	8c 93       	st	X, r24
 	ADMUX |= (1 << REFS0)|(0 << REFS1);// Set the Vref to Internal VCC
-  aa:	8c 91       	ld	r24, X
-  ac:	80 64       	ori	r24, 0x40	; 64
-  ae:	8c 93       	st	X, r24
+  e0:	8c 91       	ld	r24, X
+  e2:	80 64       	ori	r24, 0x40	; 64
+  e4:	8c 93       	st	X, r24
 	//ADMUX |= (0 << REFS0)|(0 << REFS1); // set the Vref to external Vcc in AREF
 	ADMUX |= (0 << MUX3)|(0 << MUX2)|(0 << MUX1)|(0 << MUX0); // Select the analog channel (here A0) that will be used (A0 to A6)
-  b0:	8c 91       	ld	r24, X
-  b2:	8c 93       	st	X, r24
+  e6:	8c 91       	ld	r24, X
+  e8:	8c 93       	st	X, r24
 	ADCSRA |= (1 << ADSC); // Start ADC measurements
-  b4:	80 81       	ld	r24, Z
-  b6:	80 64       	ori	r24, 0x40	; 64
-  b8:	80 83       	st	Z, r24
-	UCSR0B = (0 << RXEN0)|(0 << TXEN0);
-  ba:	e1 ec       	ldi	r30, 0xC1	; 193
-  bc:	f0 e0       	ldi	r31, 0x00	; 0
-  be:	10 82       	st	Z, r1
-	
-	UCSR0B = (0 << TXEN0) | (0 << RXEN0);
-  c0:	10 82       	st	Z, r1
-	int8_t i = 0;
-	
-	
-    while(1)
-    {
-		ADCSRA |= (1 << ADSC);
-  c2:	ea e7       	ldi	r30, 0x7A	; 122
-  c4:	f0 e0       	ldi	r31, 0x00	; 0
-		
-		PORTD = ADCL;
-  c6:	c8 e7       	ldi	r28, 0x78	; 120
-  c8:	d0 e0       	ldi	r29, 0x00	; 0
-		PORTB = ADCH;
-  ca:	a9 e7       	ldi	r26, 0x79	; 121
-  cc:	b0 e0       	ldi	r27, 0x00	; 0
-	int8_t i = 0;
-	
-	
-    while(1)
-    {
-		ADCSRA |= (1 << ADSC);
-  ce:	80 81       	ld	r24, Z
-  d0:	80 64       	ori	r24, 0x40	; 64
-  d2:	80 83       	st	Z, r24
-		
-		PORTD = ADCL;
-  d4:	88 81       	ld	r24, Y
-  d6:	8b b9       	out	0x0b, r24	; 11
-		PORTB = ADCH;
-  d8:	8c 91       	ld	r24, X
-  da:	85 b9       	out	0x05, r24	; 5
-  dc:	f8 cf       	rjmp	.-16     	; 0xce <main+0x4e>
+  ea:	80 81       	ld	r24, Z
+  ec:	80 64       	ori	r24, 0x40	; 64
+  ee:	80 83       	st	Z, r24
+	ADCSRA |= (1 << ADIE); // Enable interrupts 
+  f0:	80 81       	ld	r24, Z
+  f2:	88 60       	ori	r24, 0x08	; 8
+  f4:	80 83       	st	Z, r24
+	UCSR0B = (0 << RXEN0)|(0 << TXEN0);// Disable RX communication 
+  f6:	e1 ec       	ldi	r30, 0xC1	; 193
+  f8:	f0 e0       	ldi	r31, 0x00	; 0
+  fa:	10 82       	st	Z, r1
+	UCSR0B = (0 << TXEN0) | (0 << RXEN0);// Disable TX communication
+  fc:	10 82       	st	Z, r1
 
-000000de <_exit>:
-  de:	f8 94       	cli
+	DDRC = 0x00;
+  fe:	17 b8       	out	0x07, r1	; 7
 
-000000e0 <__stop_program>:
-  e0:	ff cf       	rjmp	.-2      	; 0xe0 <__stop_program>
+	
+	sei();
+ 100:	78 94       	sei
+	
+	ADCSRA |= 1<<ADSC;		// Start Conversion
+ 102:	ea e7       	ldi	r30, 0x7A	; 122
+ 104:	f0 e0       	ldi	r31, 0x00	; 0
+ 106:	80 81       	ld	r24, Z
+ 108:	80 64       	ori	r24, 0x40	; 64
+ 10a:	80 83       	st	Z, r24
+ 10c:	ff cf       	rjmp	.-2      	; 0x10c <main+0x56>
+
+0000010e <_exit>:
+ 10e:	f8 94       	cli
+
+00000110 <__stop_program>:
+ 110:	ff cf       	rjmp	.-2      	; 0x110 <__stop_program>
